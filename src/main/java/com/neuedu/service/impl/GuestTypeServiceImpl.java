@@ -33,6 +33,7 @@ public class GuestTypeServiceImpl implements GuestTypeService {
     @Override
     public List<GuestType> getAll(GuestType guestType) {
         GuestTypeExample guestTypeExample = new GuestTypeExample();
+//        guestTypeExample.createCriteria().andActiveEqualTo(1);//只查状态为1的
         return guestTypeMapper.selectByExample(guestTypeExample);
     }
 
@@ -50,7 +51,6 @@ public class GuestTypeServiceImpl implements GuestTypeService {
     @Override
     public int del(GuestType guestType) {
         return guestTypeMapper.updateByPrimaryKeySelective(guestType);
-//        return guestTypeMapper.deleteByPrimaryKey(id);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.neuedu.controller;//package com.neuedu.controller;
+package com.neuedu.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.GuestType;
@@ -24,6 +24,7 @@ public class GuestTypeController {
     }
     @GetMapping("/getAll")
     public List<GuestType> getAll(GuestType guestType){
+//        guestType.setActive(1);
         return guestTypeService.getAll(guestType);
     }
     @PostMapping("/add")
@@ -34,9 +35,7 @@ public class GuestTypeController {
     public int del(GuestType guestType){
         return guestTypeService.update(guestType);
     }
-//    public int del(Integer id){
-//        return guestTypeService.del(id);
-//    }
+
     @PostMapping("/update")
     public int update(GuestType guestType){
         return guestTypeService.update(guestType);
