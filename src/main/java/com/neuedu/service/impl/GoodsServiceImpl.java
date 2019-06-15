@@ -28,7 +28,9 @@ public class GoodsServiceImpl implements GoodsService {
         GoodsExample.Criteria criteria = goodsExample.createCriteria();
         if (StringUtils.isNotBlank(goods.getGoodsName())) {
             criteria.andGoodsNameLike("%" + goods.getGoodsName() + "%").andActiveEqualTo(1);
-        }else {
+        }if(goods.getGoodsTypeid()!=null){
+            criteria.andGoodsTypeidEqualTo(goods.getGoodsTypeid()).andActiveEqualTo(1);
+        } else{
             criteria.andActiveEqualTo(1);
         }
 //        GoodsTypeExample goodsTypeExample=new GoodsTypeExample();
