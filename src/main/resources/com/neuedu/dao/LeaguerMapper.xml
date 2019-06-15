@@ -6,7 +6,7 @@
     <result column="leaguer_name" jdbcType="VARCHAR" property="leaguerName" />
     <result column="leaguer_sex" jdbcType="VARCHAR" property="leaguerSex" />
     <result column="leaguer_pwd" jdbcType="VARCHAR" property="leaguerPwd" />
-    <result column="leaguer_tel" jdbcType="INTEGER" property="leaguerTel" />
+    <result column="leaguer_tel" jdbcType="VARCHAR" property="leaguerTel" />
     <result column="leaguer_address" jdbcType="VARCHAR" property="leaguerAddress" />
     <result column="leaguer_email" jdbcType="VARCHAR" property="leaguerEmail" />
     <result column="leaguer_score" jdbcType="INTEGER" property="leaguerScore" />
@@ -116,7 +116,7 @@
       time_lastlive, time_lastorder, remarks, 
       active, create_date)
     values (#{id,jdbcType=INTEGER}, #{leaguerName,jdbcType=VARCHAR}, #{leaguerSex,jdbcType=VARCHAR}, 
-      #{leaguerPwd,jdbcType=VARCHAR}, #{leaguerTel,jdbcType=INTEGER}, #{leaguerAddress,jdbcType=VARCHAR}, 
+      #{leaguerPwd,jdbcType=VARCHAR}, #{leaguerTel,jdbcType=VARCHAR}, #{leaguerAddress,jdbcType=VARCHAR}, 
       #{leaguerEmail,jdbcType=VARCHAR}, #{leaguerScore,jdbcType=INTEGER}, #{leaguerRank,jdbcType=VARCHAR}, 
       #{timeLastlive,jdbcType=TIMESTAMP}, #{timeLastorder,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
       #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
@@ -181,7 +181,7 @@
         #{leaguerPwd,jdbcType=VARCHAR},
       </if>
       <if test="leaguerTel != null">
-        #{leaguerTel,jdbcType=INTEGER},
+        #{leaguerTel,jdbcType=VARCHAR},
       </if>
       <if test="leaguerAddress != null">
         #{leaguerAddress,jdbcType=VARCHAR},
@@ -234,7 +234,7 @@
         leaguer_pwd = #{record.leaguerPwd,jdbcType=VARCHAR},
       </if>
       <if test="record.leaguerTel != null">
-        leaguer_tel = #{record.leaguerTel,jdbcType=INTEGER},
+        leaguer_tel = #{record.leaguerTel,jdbcType=VARCHAR},
       </if>
       <if test="record.leaguerAddress != null">
         leaguer_address = #{record.leaguerAddress,jdbcType=VARCHAR},
@@ -274,7 +274,7 @@
       leaguer_name = #{record.leaguerName,jdbcType=VARCHAR},
       leaguer_sex = #{record.leaguerSex,jdbcType=VARCHAR},
       leaguer_pwd = #{record.leaguerPwd,jdbcType=VARCHAR},
-      leaguer_tel = #{record.leaguerTel,jdbcType=INTEGER},
+      leaguer_tel = #{record.leaguerTel,jdbcType=VARCHAR},
       leaguer_address = #{record.leaguerAddress,jdbcType=VARCHAR},
       leaguer_email = #{record.leaguerEmail,jdbcType=VARCHAR},
       leaguer_score = #{record.leaguerScore,jdbcType=INTEGER},
@@ -301,7 +301,7 @@
         leaguer_pwd = #{leaguerPwd,jdbcType=VARCHAR},
       </if>
       <if test="leaguerTel != null">
-        leaguer_tel = #{leaguerTel,jdbcType=INTEGER},
+        leaguer_tel = #{leaguerTel,jdbcType=VARCHAR},
       </if>
       <if test="leaguerAddress != null">
         leaguer_address = #{leaguerAddress,jdbcType=VARCHAR},
@@ -338,7 +338,7 @@
     set leaguer_name = #{leaguerName,jdbcType=VARCHAR},
       leaguer_sex = #{leaguerSex,jdbcType=VARCHAR},
       leaguer_pwd = #{leaguerPwd,jdbcType=VARCHAR},
-      leaguer_tel = #{leaguerTel,jdbcType=INTEGER},
+      leaguer_tel = #{leaguerTel,jdbcType=VARCHAR},
       leaguer_address = #{leaguerAddress,jdbcType=VARCHAR},
       leaguer_email = #{leaguerEmail,jdbcType=VARCHAR},
       leaguer_score = #{leaguerScore,jdbcType=INTEGER},

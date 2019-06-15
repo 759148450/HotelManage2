@@ -11,7 +11,7 @@ public class Leaguer extends MyPage{
 
     private String leaguerPwd;
 
-    private Integer leaguerTel;
+    private String leaguerTel;
 
     private String leaguerAddress;
 
@@ -63,12 +63,12 @@ public class Leaguer extends MyPage{
         this.leaguerPwd = leaguerPwd == null ? null : leaguerPwd.trim();
     }
 
-    public Integer getLeaguerTel() {
+    public String getLeaguerTel() {
         return leaguerTel;
     }
 
-    public void setLeaguerTel(Integer leaguerTel) {
-        this.leaguerTel = leaguerTel;
+    public void setLeaguerTel(String leaguerTel) {
+        this.leaguerTel = leaguerTel == null ? null : leaguerTel.trim();
     }
 
     public String getLeaguerAddress() {

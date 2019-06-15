@@ -385,52 +385,62 @@ public class LeaguerExample {
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelEqualTo(Integer value) {
+        public Criteria andLeaguerTelEqualTo(String value) {
             addCriterion("leaguer_tel =", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelNotEqualTo(Integer value) {
+        public Criteria andLeaguerTelNotEqualTo(String value) {
             addCriterion("leaguer_tel <>", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelGreaterThan(Integer value) {
+        public Criteria andLeaguerTelGreaterThan(String value) {
             addCriterion("leaguer_tel >", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLeaguerTelGreaterThanOrEqualTo(String value) {
             addCriterion("leaguer_tel >=", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelLessThan(Integer value) {
+        public Criteria andLeaguerTelLessThan(String value) {
             addCriterion("leaguer_tel <", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelLessThanOrEqualTo(Integer value) {
+        public Criteria andLeaguerTelLessThanOrEqualTo(String value) {
             addCriterion("leaguer_tel <=", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelIn(List<Integer> values) {
+        public Criteria andLeaguerTelLike(String value) {
+            addCriterion("leaguer_tel like", value, "leaguerTel");
+            return (Criteria) this;
+        }
+
+        public Criteria andLeaguerTelNotLike(String value) {
+            addCriterion("leaguer_tel not like", value, "leaguerTel");
+            return (Criteria) this;
+        }
+
+        public Criteria andLeaguerTelIn(List<String> values) {
             addCriterion("leaguer_tel in", values, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelNotIn(List<Integer> values) {
+        public Criteria andLeaguerTelNotIn(List<String> values) {
             addCriterion("leaguer_tel not in", values, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelBetween(Integer value1, Integer value2) {
+        public Criteria andLeaguerTelBetween(String value1, String value2) {
             addCriterion("leaguer_tel between", value1, value2, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andLeaguerTelNotBetween(Integer value1, Integer value2) {
+        public Criteria andLeaguerTelNotBetween(String value1, String value2) {
             addCriterion("leaguer_tel not between", value1, value2, "leaguerTel");
             return (Criteria) this;
         }
