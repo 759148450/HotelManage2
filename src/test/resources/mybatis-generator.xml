@@ -47,7 +47,8 @@
         <!-- 指定数据库表 -->
         <!--<table tableName="guest_type"></table>-->
         <!--<table tableName="floor"></table>-->
-        <table tableName="leaguer"></table>
+        <!--<table tableName="leaguer"></table>-->
+        <table tableName="user"></table>
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />
