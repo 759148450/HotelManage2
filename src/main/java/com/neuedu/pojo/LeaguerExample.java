@@ -105,723 +105,723 @@ public class LeaguerExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andGidIsNull() {
-            addCriterion("gId is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andGidIsNotNull() {
-            addCriterion("gId is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGidEqualTo(Integer value) {
-            addCriterion("gId =", value, "gid");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidNotEqualTo(Integer value) {
-            addCriterion("gId <>", value, "gid");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidGreaterThan(Integer value) {
-            addCriterion("gId >", value, "gid");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("gId >=", value, "gid");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidLessThan(Integer value) {
-            addCriterion("gId <", value, "gid");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidLessThanOrEqualTo(Integer value) {
-            addCriterion("gId <=", value, "gid");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidIn(List<Integer> values) {
-            addCriterion("gId in", values, "gid");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidNotIn(List<Integer> values) {
-            addCriterion("gId not in", values, "gid");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidBetween(Integer value1, Integer value2) {
-            addCriterion("gId between", value1, value2, "gid");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGidNotBetween(Integer value1, Integer value2) {
-            addCriterion("gId not between", value1, value2, "gid");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andGnameIsNull() {
-            addCriterion("gName is null");
+        public Criteria andLeaguerNameIsNull() {
+            addCriterion("leaguer_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andGnameIsNotNull() {
-            addCriterion("gName is not null");
+        public Criteria andLeaguerNameIsNotNull() {
+            addCriterion("leaguer_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGnameEqualTo(String value) {
-            addCriterion("gName =", value, "gname");
+        public Criteria andLeaguerNameEqualTo(String value) {
+            addCriterion("leaguer_name =", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameNotEqualTo(String value) {
-            addCriterion("gName <>", value, "gname");
+        public Criteria andLeaguerNameNotEqualTo(String value) {
+            addCriterion("leaguer_name <>", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameGreaterThan(String value) {
-            addCriterion("gName >", value, "gname");
+        public Criteria andLeaguerNameGreaterThan(String value) {
+            addCriterion("leaguer_name >", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameGreaterThanOrEqualTo(String value) {
-            addCriterion("gName >=", value, "gname");
+        public Criteria andLeaguerNameGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_name >=", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameLessThan(String value) {
-            addCriterion("gName <", value, "gname");
+        public Criteria andLeaguerNameLessThan(String value) {
+            addCriterion("leaguer_name <", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameLessThanOrEqualTo(String value) {
-            addCriterion("gName <=", value, "gname");
+        public Criteria andLeaguerNameLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_name <=", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameLike(String value) {
-            addCriterion("gName like", value, "gname");
+        public Criteria andLeaguerNameLike(String value) {
+            addCriterion("leaguer_name like", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameNotLike(String value) {
-            addCriterion("gName not like", value, "gname");
+        public Criteria andLeaguerNameNotLike(String value) {
+            addCriterion("leaguer_name not like", value, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameIn(List<String> values) {
-            addCriterion("gName in", values, "gname");
+        public Criteria andLeaguerNameIn(List<String> values) {
+            addCriterion("leaguer_name in", values, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameNotIn(List<String> values) {
-            addCriterion("gName not in", values, "gname");
+        public Criteria andLeaguerNameNotIn(List<String> values) {
+            addCriterion("leaguer_name not in", values, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameBetween(String value1, String value2) {
-            addCriterion("gName between", value1, value2, "gname");
+        public Criteria andLeaguerNameBetween(String value1, String value2) {
+            addCriterion("leaguer_name between", value1, value2, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGnameNotBetween(String value1, String value2) {
-            addCriterion("gName not between", value1, value2, "gname");
+        public Criteria andLeaguerNameNotBetween(String value1, String value2) {
+            addCriterion("leaguer_name not between", value1, value2, "leaguerName");
             return (Criteria) this;
         }
 
-        public Criteria andGsexIsNull() {
-            addCriterion("gSex is null");
+        public Criteria andLeaguerSexIsNull() {
+            addCriterion("leaguer_sex is null");
             return (Criteria) this;
         }
 
-        public Criteria andGsexIsNotNull() {
-            addCriterion("gSex is not null");
+        public Criteria andLeaguerSexIsNotNull() {
+            addCriterion("leaguer_sex is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGsexEqualTo(String value) {
-            addCriterion("gSex =", value, "gsex");
+        public Criteria andLeaguerSexEqualTo(String value) {
+            addCriterion("leaguer_sex =", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexNotEqualTo(String value) {
-            addCriterion("gSex <>", value, "gsex");
+        public Criteria andLeaguerSexNotEqualTo(String value) {
+            addCriterion("leaguer_sex <>", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexGreaterThan(String value) {
-            addCriterion("gSex >", value, "gsex");
+        public Criteria andLeaguerSexGreaterThan(String value) {
+            addCriterion("leaguer_sex >", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexGreaterThanOrEqualTo(String value) {
-            addCriterion("gSex >=", value, "gsex");
+        public Criteria andLeaguerSexGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_sex >=", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexLessThan(String value) {
-            addCriterion("gSex <", value, "gsex");
+        public Criteria andLeaguerSexLessThan(String value) {
+            addCriterion("leaguer_sex <", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexLessThanOrEqualTo(String value) {
-            addCriterion("gSex <=", value, "gsex");
+        public Criteria andLeaguerSexLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_sex <=", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexLike(String value) {
-            addCriterion("gSex like", value, "gsex");
+        public Criteria andLeaguerSexLike(String value) {
+            addCriterion("leaguer_sex like", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexNotLike(String value) {
-            addCriterion("gSex not like", value, "gsex");
+        public Criteria andLeaguerSexNotLike(String value) {
+            addCriterion("leaguer_sex not like", value, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexIn(List<String> values) {
-            addCriterion("gSex in", values, "gsex");
+        public Criteria andLeaguerSexIn(List<String> values) {
+            addCriterion("leaguer_sex in", values, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexNotIn(List<String> values) {
-            addCriterion("gSex not in", values, "gsex");
+        public Criteria andLeaguerSexNotIn(List<String> values) {
+            addCriterion("leaguer_sex not in", values, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexBetween(String value1, String value2) {
-            addCriterion("gSex between", value1, value2, "gsex");
+        public Criteria andLeaguerSexBetween(String value1, String value2) {
+            addCriterion("leaguer_sex between", value1, value2, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGsexNotBetween(String value1, String value2) {
-            addCriterion("gSex not between", value1, value2, "gsex");
+        public Criteria andLeaguerSexNotBetween(String value1, String value2) {
+            addCriterion("leaguer_sex not between", value1, value2, "leaguerSex");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdIsNull() {
-            addCriterion("gPwd is null");
+        public Criteria andLeaguerPwdIsNull() {
+            addCriterion("leaguer_pwd is null");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdIsNotNull() {
-            addCriterion("gPwd is not null");
+        public Criteria andLeaguerPwdIsNotNull() {
+            addCriterion("leaguer_pwd is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdEqualTo(String value) {
-            addCriterion("gPwd =", value, "gpwd");
+        public Criteria andLeaguerPwdEqualTo(String value) {
+            addCriterion("leaguer_pwd =", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdNotEqualTo(String value) {
-            addCriterion("gPwd <>", value, "gpwd");
+        public Criteria andLeaguerPwdNotEqualTo(String value) {
+            addCriterion("leaguer_pwd <>", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdGreaterThan(String value) {
-            addCriterion("gPwd >", value, "gpwd");
+        public Criteria andLeaguerPwdGreaterThan(String value) {
+            addCriterion("leaguer_pwd >", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdGreaterThanOrEqualTo(String value) {
-            addCriterion("gPwd >=", value, "gpwd");
+        public Criteria andLeaguerPwdGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_pwd >=", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdLessThan(String value) {
-            addCriterion("gPwd <", value, "gpwd");
+        public Criteria andLeaguerPwdLessThan(String value) {
+            addCriterion("leaguer_pwd <", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdLessThanOrEqualTo(String value) {
-            addCriterion("gPwd <=", value, "gpwd");
+        public Criteria andLeaguerPwdLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_pwd <=", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdLike(String value) {
-            addCriterion("gPwd like", value, "gpwd");
+        public Criteria andLeaguerPwdLike(String value) {
+            addCriterion("leaguer_pwd like", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdNotLike(String value) {
-            addCriterion("gPwd not like", value, "gpwd");
+        public Criteria andLeaguerPwdNotLike(String value) {
+            addCriterion("leaguer_pwd not like", value, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdIn(List<String> values) {
-            addCriterion("gPwd in", values, "gpwd");
+        public Criteria andLeaguerPwdIn(List<String> values) {
+            addCriterion("leaguer_pwd in", values, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdNotIn(List<String> values) {
-            addCriterion("gPwd not in", values, "gpwd");
+        public Criteria andLeaguerPwdNotIn(List<String> values) {
+            addCriterion("leaguer_pwd not in", values, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdBetween(String value1, String value2) {
-            addCriterion("gPwd between", value1, value2, "gpwd");
+        public Criteria andLeaguerPwdBetween(String value1, String value2) {
+            addCriterion("leaguer_pwd between", value1, value2, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGpwdNotBetween(String value1, String value2) {
-            addCriterion("gPwd not between", value1, value2, "gpwd");
+        public Criteria andLeaguerPwdNotBetween(String value1, String value2) {
+            addCriterion("leaguer_pwd not between", value1, value2, "leaguerPwd");
             return (Criteria) this;
         }
 
-        public Criteria andGtelIsNull() {
-            addCriterion("gTel is null");
+        public Criteria andLeaguerTelIsNull() {
+            addCriterion("leaguer_tel is null");
             return (Criteria) this;
         }
 
-        public Criteria andGtelIsNotNull() {
-            addCriterion("gTel is not null");
+        public Criteria andLeaguerTelIsNotNull() {
+            addCriterion("leaguer_tel is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGtelEqualTo(Integer value) {
-            addCriterion("gTel =", value, "gtel");
+        public Criteria andLeaguerTelEqualTo(Integer value) {
+            addCriterion("leaguer_tel =", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelNotEqualTo(Integer value) {
-            addCriterion("gTel <>", value, "gtel");
+        public Criteria andLeaguerTelNotEqualTo(Integer value) {
+            addCriterion("leaguer_tel <>", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelGreaterThan(Integer value) {
-            addCriterion("gTel >", value, "gtel");
+        public Criteria andLeaguerTelGreaterThan(Integer value) {
+            addCriterion("leaguer_tel >", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelGreaterThanOrEqualTo(Integer value) {
-            addCriterion("gTel >=", value, "gtel");
+        public Criteria andLeaguerTelGreaterThanOrEqualTo(Integer value) {
+            addCriterion("leaguer_tel >=", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelLessThan(Integer value) {
-            addCriterion("gTel <", value, "gtel");
+        public Criteria andLeaguerTelLessThan(Integer value) {
+            addCriterion("leaguer_tel <", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelLessThanOrEqualTo(Integer value) {
-            addCriterion("gTel <=", value, "gtel");
+        public Criteria andLeaguerTelLessThanOrEqualTo(Integer value) {
+            addCriterion("leaguer_tel <=", value, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelIn(List<Integer> values) {
-            addCriterion("gTel in", values, "gtel");
+        public Criteria andLeaguerTelIn(List<Integer> values) {
+            addCriterion("leaguer_tel in", values, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelNotIn(List<Integer> values) {
-            addCriterion("gTel not in", values, "gtel");
+        public Criteria andLeaguerTelNotIn(List<Integer> values) {
+            addCriterion("leaguer_tel not in", values, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelBetween(Integer value1, Integer value2) {
-            addCriterion("gTel between", value1, value2, "gtel");
+        public Criteria andLeaguerTelBetween(Integer value1, Integer value2) {
+            addCriterion("leaguer_tel between", value1, value2, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGtelNotBetween(Integer value1, Integer value2) {
-            addCriterion("gTel not between", value1, value2, "gtel");
+        public Criteria andLeaguerTelNotBetween(Integer value1, Integer value2) {
+            addCriterion("leaguer_tel not between", value1, value2, "leaguerTel");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressIsNull() {
-            addCriterion("gAddress is null");
+        public Criteria andLeaguerAddressIsNull() {
+            addCriterion("leaguer_address is null");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressIsNotNull() {
-            addCriterion("gAddress is not null");
+        public Criteria andLeaguerAddressIsNotNull() {
+            addCriterion("leaguer_address is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressEqualTo(String value) {
-            addCriterion("gAddress =", value, "gaddress");
+        public Criteria andLeaguerAddressEqualTo(String value) {
+            addCriterion("leaguer_address =", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressNotEqualTo(String value) {
-            addCriterion("gAddress <>", value, "gaddress");
+        public Criteria andLeaguerAddressNotEqualTo(String value) {
+            addCriterion("leaguer_address <>", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressGreaterThan(String value) {
-            addCriterion("gAddress >", value, "gaddress");
+        public Criteria andLeaguerAddressGreaterThan(String value) {
+            addCriterion("leaguer_address >", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressGreaterThanOrEqualTo(String value) {
-            addCriterion("gAddress >=", value, "gaddress");
+        public Criteria andLeaguerAddressGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_address >=", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressLessThan(String value) {
-            addCriterion("gAddress <", value, "gaddress");
+        public Criteria andLeaguerAddressLessThan(String value) {
+            addCriterion("leaguer_address <", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressLessThanOrEqualTo(String value) {
-            addCriterion("gAddress <=", value, "gaddress");
+        public Criteria andLeaguerAddressLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_address <=", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressLike(String value) {
-            addCriterion("gAddress like", value, "gaddress");
+        public Criteria andLeaguerAddressLike(String value) {
+            addCriterion("leaguer_address like", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressNotLike(String value) {
-            addCriterion("gAddress not like", value, "gaddress");
+        public Criteria andLeaguerAddressNotLike(String value) {
+            addCriterion("leaguer_address not like", value, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressIn(List<String> values) {
-            addCriterion("gAddress in", values, "gaddress");
+        public Criteria andLeaguerAddressIn(List<String> values) {
+            addCriterion("leaguer_address in", values, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressNotIn(List<String> values) {
-            addCriterion("gAddress not in", values, "gaddress");
+        public Criteria andLeaguerAddressNotIn(List<String> values) {
+            addCriterion("leaguer_address not in", values, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressBetween(String value1, String value2) {
-            addCriterion("gAddress between", value1, value2, "gaddress");
+        public Criteria andLeaguerAddressBetween(String value1, String value2) {
+            addCriterion("leaguer_address between", value1, value2, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGaddressNotBetween(String value1, String value2) {
-            addCriterion("gAddress not between", value1, value2, "gaddress");
+        public Criteria andLeaguerAddressNotBetween(String value1, String value2) {
+            addCriterion("leaguer_address not between", value1, value2, "leaguerAddress");
             return (Criteria) this;
         }
 
-        public Criteria andGemailIsNull() {
-            addCriterion("gEmail is null");
+        public Criteria andLeaguerEmailIsNull() {
+            addCriterion("leaguer_email is null");
             return (Criteria) this;
         }
 
-        public Criteria andGemailIsNotNull() {
-            addCriterion("gEmail is not null");
+        public Criteria andLeaguerEmailIsNotNull() {
+            addCriterion("leaguer_email is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGemailEqualTo(String value) {
-            addCriterion("gEmail =", value, "gemail");
+        public Criteria andLeaguerEmailEqualTo(String value) {
+            addCriterion("leaguer_email =", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailNotEqualTo(String value) {
-            addCriterion("gEmail <>", value, "gemail");
+        public Criteria andLeaguerEmailNotEqualTo(String value) {
+            addCriterion("leaguer_email <>", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailGreaterThan(String value) {
-            addCriterion("gEmail >", value, "gemail");
+        public Criteria andLeaguerEmailGreaterThan(String value) {
+            addCriterion("leaguer_email >", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailGreaterThanOrEqualTo(String value) {
-            addCriterion("gEmail >=", value, "gemail");
+        public Criteria andLeaguerEmailGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_email >=", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailLessThan(String value) {
-            addCriterion("gEmail <", value, "gemail");
+        public Criteria andLeaguerEmailLessThan(String value) {
+            addCriterion("leaguer_email <", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailLessThanOrEqualTo(String value) {
-            addCriterion("gEmail <=", value, "gemail");
+        public Criteria andLeaguerEmailLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_email <=", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailLike(String value) {
-            addCriterion("gEmail like", value, "gemail");
+        public Criteria andLeaguerEmailLike(String value) {
+            addCriterion("leaguer_email like", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailNotLike(String value) {
-            addCriterion("gEmail not like", value, "gemail");
+        public Criteria andLeaguerEmailNotLike(String value) {
+            addCriterion("leaguer_email not like", value, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailIn(List<String> values) {
-            addCriterion("gEmail in", values, "gemail");
+        public Criteria andLeaguerEmailIn(List<String> values) {
+            addCriterion("leaguer_email in", values, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailNotIn(List<String> values) {
-            addCriterion("gEmail not in", values, "gemail");
+        public Criteria andLeaguerEmailNotIn(List<String> values) {
+            addCriterion("leaguer_email not in", values, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailBetween(String value1, String value2) {
-            addCriterion("gEmail between", value1, value2, "gemail");
+        public Criteria andLeaguerEmailBetween(String value1, String value2) {
+            addCriterion("leaguer_email between", value1, value2, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGemailNotBetween(String value1, String value2) {
-            addCriterion("gEmail not between", value1, value2, "gemail");
+        public Criteria andLeaguerEmailNotBetween(String value1, String value2) {
+            addCriterion("leaguer_email not between", value1, value2, "leaguerEmail");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreIsNull() {
-            addCriterion("gScore is null");
+        public Criteria andLeaguerScoreIsNull() {
+            addCriterion("leaguer_score is null");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreIsNotNull() {
-            addCriterion("gScore is not null");
+        public Criteria andLeaguerScoreIsNotNull() {
+            addCriterion("leaguer_score is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreEqualTo(Integer value) {
-            addCriterion("gScore =", value, "gscore");
+        public Criteria andLeaguerScoreEqualTo(Integer value) {
+            addCriterion("leaguer_score =", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreNotEqualTo(Integer value) {
-            addCriterion("gScore <>", value, "gscore");
+        public Criteria andLeaguerScoreNotEqualTo(Integer value) {
+            addCriterion("leaguer_score <>", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreGreaterThan(Integer value) {
-            addCriterion("gScore >", value, "gscore");
+        public Criteria andLeaguerScoreGreaterThan(Integer value) {
+            addCriterion("leaguer_score >", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreGreaterThanOrEqualTo(Integer value) {
-            addCriterion("gScore >=", value, "gscore");
+        public Criteria andLeaguerScoreGreaterThanOrEqualTo(Integer value) {
+            addCriterion("leaguer_score >=", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreLessThan(Integer value) {
-            addCriterion("gScore <", value, "gscore");
+        public Criteria andLeaguerScoreLessThan(Integer value) {
+            addCriterion("leaguer_score <", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreLessThanOrEqualTo(Integer value) {
-            addCriterion("gScore <=", value, "gscore");
+        public Criteria andLeaguerScoreLessThanOrEqualTo(Integer value) {
+            addCriterion("leaguer_score <=", value, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreIn(List<Integer> values) {
-            addCriterion("gScore in", values, "gscore");
+        public Criteria andLeaguerScoreIn(List<Integer> values) {
+            addCriterion("leaguer_score in", values, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreNotIn(List<Integer> values) {
-            addCriterion("gScore not in", values, "gscore");
+        public Criteria andLeaguerScoreNotIn(List<Integer> values) {
+            addCriterion("leaguer_score not in", values, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreBetween(Integer value1, Integer value2) {
-            addCriterion("gScore between", value1, value2, "gscore");
+        public Criteria andLeaguerScoreBetween(Integer value1, Integer value2) {
+            addCriterion("leaguer_score between", value1, value2, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGscoreNotBetween(Integer value1, Integer value2) {
-            addCriterion("gScore not between", value1, value2, "gscore");
+        public Criteria andLeaguerScoreNotBetween(Integer value1, Integer value2) {
+            addCriterion("leaguer_score not between", value1, value2, "leaguerScore");
             return (Criteria) this;
         }
 
-        public Criteria andGrankIsNull() {
-            addCriterion("gRank is null");
+        public Criteria andLeaguerRankIsNull() {
+            addCriterion("leaguer_rank is null");
             return (Criteria) this;
         }
 
-        public Criteria andGrankIsNotNull() {
-            addCriterion("gRank is not null");
+        public Criteria andLeaguerRankIsNotNull() {
+            addCriterion("leaguer_rank is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGrankEqualTo(String value) {
-            addCriterion("gRank =", value, "grank");
+        public Criteria andLeaguerRankEqualTo(String value) {
+            addCriterion("leaguer_rank =", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankNotEqualTo(String value) {
-            addCriterion("gRank <>", value, "grank");
+        public Criteria andLeaguerRankNotEqualTo(String value) {
+            addCriterion("leaguer_rank <>", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankGreaterThan(String value) {
-            addCriterion("gRank >", value, "grank");
+        public Criteria andLeaguerRankGreaterThan(String value) {
+            addCriterion("leaguer_rank >", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankGreaterThanOrEqualTo(String value) {
-            addCriterion("gRank >=", value, "grank");
+        public Criteria andLeaguerRankGreaterThanOrEqualTo(String value) {
+            addCriterion("leaguer_rank >=", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankLessThan(String value) {
-            addCriterion("gRank <", value, "grank");
+        public Criteria andLeaguerRankLessThan(String value) {
+            addCriterion("leaguer_rank <", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankLessThanOrEqualTo(String value) {
-            addCriterion("gRank <=", value, "grank");
+        public Criteria andLeaguerRankLessThanOrEqualTo(String value) {
+            addCriterion("leaguer_rank <=", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankLike(String value) {
-            addCriterion("gRank like", value, "grank");
+        public Criteria andLeaguerRankLike(String value) {
+            addCriterion("leaguer_rank like", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankNotLike(String value) {
-            addCriterion("gRank not like", value, "grank");
+        public Criteria andLeaguerRankNotLike(String value) {
+            addCriterion("leaguer_rank not like", value, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankIn(List<String> values) {
-            addCriterion("gRank in", values, "grank");
+        public Criteria andLeaguerRankIn(List<String> values) {
+            addCriterion("leaguer_rank in", values, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankNotIn(List<String> values) {
-            addCriterion("gRank not in", values, "grank");
+        public Criteria andLeaguerRankNotIn(List<String> values) {
+            addCriterion("leaguer_rank not in", values, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankBetween(String value1, String value2) {
-            addCriterion("gRank between", value1, value2, "grank");
+        public Criteria andLeaguerRankBetween(String value1, String value2) {
+            addCriterion("leaguer_rank between", value1, value2, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGrankNotBetween(String value1, String value2) {
-            addCriterion("gRank not between", value1, value2, "grank");
+        public Criteria andLeaguerRankNotBetween(String value1, String value2) {
+            addCriterion("leaguer_rank not between", value1, value2, "leaguerRank");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeIsNull() {
-            addCriterion("gLastLiveTime is null");
+        public Criteria andTimeLastliveIsNull() {
+            addCriterion("time_lastlive is null");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeIsNotNull() {
-            addCriterion("gLastLiveTime is not null");
+        public Criteria andTimeLastliveIsNotNull() {
+            addCriterion("time_lastlive is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeEqualTo(Date value) {
-            addCriterion("gLastLiveTime =", value, "glastlivetime");
+        public Criteria andTimeLastliveEqualTo(Date value) {
+            addCriterion("time_lastlive =", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeNotEqualTo(Date value) {
-            addCriterion("gLastLiveTime <>", value, "glastlivetime");
+        public Criteria andTimeLastliveNotEqualTo(Date value) {
+            addCriterion("time_lastlive <>", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeGreaterThan(Date value) {
-            addCriterion("gLastLiveTime >", value, "glastlivetime");
+        public Criteria andTimeLastliveGreaterThan(Date value) {
+            addCriterion("time_lastlive >", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("gLastLiveTime >=", value, "glastlivetime");
+        public Criteria andTimeLastliveGreaterThanOrEqualTo(Date value) {
+            addCriterion("time_lastlive >=", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeLessThan(Date value) {
-            addCriterion("gLastLiveTime <", value, "glastlivetime");
+        public Criteria andTimeLastliveLessThan(Date value) {
+            addCriterion("time_lastlive <", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeLessThanOrEqualTo(Date value) {
-            addCriterion("gLastLiveTime <=", value, "glastlivetime");
+        public Criteria andTimeLastliveLessThanOrEqualTo(Date value) {
+            addCriterion("time_lastlive <=", value, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeIn(List<Date> values) {
-            addCriterion("gLastLiveTime in", values, "glastlivetime");
+        public Criteria andTimeLastliveIn(List<Date> values) {
+            addCriterion("time_lastlive in", values, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeNotIn(List<Date> values) {
-            addCriterion("gLastLiveTime not in", values, "glastlivetime");
+        public Criteria andTimeLastliveNotIn(List<Date> values) {
+            addCriterion("time_lastlive not in", values, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeBetween(Date value1, Date value2) {
-            addCriterion("gLastLiveTime between", value1, value2, "glastlivetime");
+        public Criteria andTimeLastliveBetween(Date value1, Date value2) {
+            addCriterion("time_lastlive between", value1, value2, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastlivetimeNotBetween(Date value1, Date value2) {
-            addCriterion("gLastLiveTime not between", value1, value2, "glastlivetime");
+        public Criteria andTimeLastliveNotBetween(Date value1, Date value2) {
+            addCriterion("time_lastlive not between", value1, value2, "timeLastlive");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeIsNull() {
-            addCriterion("gLastOrderTime is null");
+        public Criteria andTimeLastorderIsNull() {
+            addCriterion("time_lastorder is null");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeIsNotNull() {
-            addCriterion("gLastOrderTime is not null");
+        public Criteria andTimeLastorderIsNotNull() {
+            addCriterion("time_lastorder is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeEqualTo(Date value) {
-            addCriterion("gLastOrderTime =", value, "glastordertime");
+        public Criteria andTimeLastorderEqualTo(Date value) {
+            addCriterion("time_lastorder =", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeNotEqualTo(Date value) {
-            addCriterion("gLastOrderTime <>", value, "glastordertime");
+        public Criteria andTimeLastorderNotEqualTo(Date value) {
+            addCriterion("time_lastorder <>", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeGreaterThan(Date value) {
-            addCriterion("gLastOrderTime >", value, "glastordertime");
+        public Criteria andTimeLastorderGreaterThan(Date value) {
+            addCriterion("time_lastorder >", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("gLastOrderTime >=", value, "glastordertime");
+        public Criteria andTimeLastorderGreaterThanOrEqualTo(Date value) {
+            addCriterion("time_lastorder >=", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeLessThan(Date value) {
-            addCriterion("gLastOrderTime <", value, "glastordertime");
+        public Criteria andTimeLastorderLessThan(Date value) {
+            addCriterion("time_lastorder <", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeLessThanOrEqualTo(Date value) {
-            addCriterion("gLastOrderTime <=", value, "glastordertime");
+        public Criteria andTimeLastorderLessThanOrEqualTo(Date value) {
+            addCriterion("time_lastorder <=", value, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeIn(List<Date> values) {
-            addCriterion("gLastOrderTime in", values, "glastordertime");
+        public Criteria andTimeLastorderIn(List<Date> values) {
+            addCriterion("time_lastorder in", values, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeNotIn(List<Date> values) {
-            addCriterion("gLastOrderTime not in", values, "glastordertime");
+        public Criteria andTimeLastorderNotIn(List<Date> values) {
+            addCriterion("time_lastorder not in", values, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeBetween(Date value1, Date value2) {
-            addCriterion("gLastOrderTime between", value1, value2, "glastordertime");
+        public Criteria andTimeLastorderBetween(Date value1, Date value2) {
+            addCriterion("time_lastorder between", value1, value2, "timeLastorder");
             return (Criteria) this;
         }
 
-        public Criteria andGlastordertimeNotBetween(Date value1, Date value2) {
-            addCriterion("gLastOrderTime not between", value1, value2, "glastordertime");
+        public Criteria andTimeLastorderNotBetween(Date value1, Date value2) {
+            addCriterion("time_lastorder not between", value1, value2, "timeLastorder");
             return (Criteria) this;
         }
 

@@ -40,7 +40,7 @@ public class LeaguerController {
         return leaguerService.update(leaguer);
     }
     @GetMapping("/getOne")
-    public Leaguer getOne(Integer gid){
-        return leaguerService.getleaguerById(gid);
+    public Leaguer getOne(Integer id){
+        return leaguerService.getleaguerById(id);
     }
 }

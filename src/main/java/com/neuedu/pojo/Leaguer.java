@@ -3,27 +3,27 @@ package com.neuedu.pojo;
 import java.util.Date;
 
 public class Leaguer extends MyPage{
-    private Integer gid;
+    private Integer id;
 
-    private String gname;
+    private String leaguerName;
 
-    private String gsex;
+    private String leaguerSex;
 
-    private String gpwd;
+    private String leaguerPwd;
 
-    private Integer gtel;
+    private Integer leaguerTel;
 
-    private String gaddress;
+    private String leaguerAddress;
 
-    private String gemail;
+    private String leaguerEmail;
 
-    private Integer gscore;
+    private Integer leaguerScore;
 
-    private String grank;
+    private String leaguerRank;
 
-    private Date glastlivetime;
+    private Date timeLastlive;
 
-    private Date glastordertime;
+    private Date timeLastorder;
 
     private String remarks;
 
@@ -31,92 +31,92 @@ public class Leaguer extends MyPage{
 
     private Date createDate;
 
-    public Integer getGid() {
-        return gid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setGid(Integer gid) {
-        this.gid = gid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getGname() {
-        return gname;
+    public String getLeaguerName() {
+        return leaguerName;
     }
 
-    public void setGname(String gname) {
-        this.gname = gname == null ? null : gname.trim();
+    public void setLeaguerName(String leaguerName) {
+        this.leaguerName = leaguerName == null ? null : leaguerName.trim();
     }
 
-    public String getGsex() {
-        return gsex;
+    public String getLeaguerSex() {
+        return leaguerSex;
     }
 
-    public void setGsex(String gsex) {
-        this.gsex = gsex == null ? null : gsex.trim();
+    public void setLeaguerSex(String leaguerSex) {
+        this.leaguerSex = leaguerSex == null ? null : leaguerSex.trim();
     }
 
-    public String getGpwd() {
-        return gpwd;
+    public String getLeaguerPwd() {
+        return leaguerPwd;
     }
 
-    public void setGpwd(String gpwd) {
-        this.gpwd = gpwd == null ? null : gpwd.trim();
+    public void setLeaguerPwd(String leaguerPwd) {
+        this.leaguerPwd = leaguerPwd == null ? null : leaguerPwd.trim();
     }
 
-    public Integer getGtel() {
-        return gtel;
+    public Integer getLeaguerTel() {
+        return leaguerTel;
     }
 
-    public void setGtel(Integer gtel) {
-        this.gtel = gtel;
+    public void setLeaguerTel(Integer leaguerTel) {
+        this.leaguerTel = leaguerTel;
     }
 
-    public String getGaddress() {
-        return gaddress;
+    public String getLeaguerAddress() {
+        return leaguerAddress;
     }
 
-    public void setGaddress(String gaddress) {
-        this.gaddress = gaddress == null ? null : gaddress.trim();
+    public void setLeaguerAddress(String leaguerAddress) {
+        this.leaguerAddress = leaguerAddress == null ? null : leaguerAddress.trim();
     }
 
-    public String getGemail() {
-        return gemail;
+    public String getLeaguerEmail() {
+        return leaguerEmail;
     }
 
-    public void setGemail(String gemail) {
-        this.gemail = gemail == null ? null : gemail.trim();
+    public void setLeaguerEmail(String leaguerEmail) {
+        this.leaguerEmail = leaguerEmail == null ? null : leaguerEmail.trim();
     }
 
-    public Integer getGscore() {
-        return gscore;
+    public Integer getLeaguerScore() {
+        return leaguerScore;
     }
 
-    public void setGscore(Integer gscore) {
-        this.gscore = gscore;
+    public void setLeaguerScore(Integer leaguerScore) {
+        this.leaguerScore = leaguerScore;
     }
 
-    public String getGrank() {
-        return grank;
+    public String getLeaguerRank() {
+        return leaguerRank;
     }
 
-    public void setGrank(String grank) {
-        this.grank = grank == null ? null : grank.trim();
+    public void setLeaguerRank(String leaguerRank) {
+        this.leaguerRank = leaguerRank == null ? null : leaguerRank.trim();
     }
 
-    public Date getGlastlivetime() {
-        return glastlivetime;
+    public Date getTimeLastlive() {
+        return timeLastlive;
     }
 
-    public void setGlastlivetime(Date glastlivetime) {
-        this.glastlivetime = glastlivetime;
+    public void setTimeLastlive(Date timeLastlive) {
+        this.timeLastlive = timeLastlive;
     }
 
-    public Date getGlastordertime() {
-        return glastordertime;
+    public Date getTimeLastorder() {
+        return timeLastorder;
     }
 
-    public void setGlastordertime(Date glastordertime) {
-        this.glastordertime = glastordertime;
+    public void setTimeLastorder(Date timeLastorder) {
+        this.timeLastorder = timeLastorder;
     }
 
     public String getRemarks() {

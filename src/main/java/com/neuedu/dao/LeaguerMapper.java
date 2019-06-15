@@ -10,7 +10,7 @@ public interface LeaguerMapper {
 
     int deleteByExample(LeaguerExample example);
 
-    int deleteByPrimaryKey(Integer gid);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Leaguer record);
 
@@ -18,7 +18,7 @@ public interface LeaguerMapper {
 
     List<Leaguer> selectByExample(LeaguerExample example);
 
-    Leaguer selectByPrimaryKey(Integer gid);
+    Leaguer selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Leaguer record, @Param("example") LeaguerExample example);
 

@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.neuedu.dao.LeaguerMapper">
   <resultMap id="BaseResultMap" type="com.neuedu.pojo.Leaguer">
-    <id column="gId" jdbcType="INTEGER" property="gid" />
-    <result column="gName" jdbcType="VARCHAR" property="gname" />
-    <result column="gSex" jdbcType="VARCHAR" property="gsex" />
-    <result column="gPwd" jdbcType="VARCHAR" property="gpwd" />
-    <result column="gTel" jdbcType="INTEGER" property="gtel" />
-    <result column="gAddress" jdbcType="VARCHAR" property="gaddress" />
-    <result column="gEmail" jdbcType="VARCHAR" property="gemail" />
-    <result column="gScore" jdbcType="INTEGER" property="gscore" />
-    <result column="gRank" jdbcType="VARCHAR" property="grank" />
-    <result column="gLastLiveTime" jdbcType="TIMESTAMP" property="glastlivetime" />
-    <result column="gLastOrderTime" jdbcType="TIMESTAMP" property="glastordertime" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="leaguer_name" jdbcType="VARCHAR" property="leaguerName" />
+    <result column="leaguer_sex" jdbcType="VARCHAR" property="leaguerSex" />
+    <result column="leaguer_pwd" jdbcType="VARCHAR" property="leaguerPwd" />
+    <result column="leaguer_tel" jdbcType="INTEGER" property="leaguerTel" />
+    <result column="leaguer_address" jdbcType="VARCHAR" property="leaguerAddress" />
+    <result column="leaguer_email" jdbcType="VARCHAR" property="leaguerEmail" />
+    <result column="leaguer_score" jdbcType="INTEGER" property="leaguerScore" />
+    <result column="leaguer_rank" jdbcType="VARCHAR" property="leaguerRank" />
+    <result column="time_lastlive" jdbcType="TIMESTAMP" property="timeLastlive" />
+    <result column="time_lastorder" jdbcType="TIMESTAMP" property="timeLastorder" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
     <result column="active" jdbcType="INTEGER" property="active" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
@@ -76,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    gId, gName, gSex, gPwd, gTel, gAddress, gEmail, gScore, gRank, gLastLiveTime, gLastOrderTime, 
-    remarks, active, create_date
+    id, leaguer_name, leaguer_sex, leaguer_pwd, leaguer_tel, leaguer_address, leaguer_email, 
+    leaguer_score, leaguer_rank, time_lastlive, time_lastorder, remarks, active, create_date
   </sql>
   <select id="selectByExample" parameterType="com.neuedu.pojo.LeaguerExample" resultMap="BaseResultMap">
     select
@@ -97,11 +97,11 @@
     select 
     <include refid="Base_Column_List" />
     from leaguer
-    where gId = #{gid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from leaguer
-    where gId = #{gid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.neuedu.pojo.LeaguerExample">
     delete from leaguer
@@ -110,52 +110,52 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.neuedu.pojo.Leaguer">
-    insert into leaguer (gId, gName, gSex, 
-      gPwd, gTel, gAddress, 
-      gEmail, gScore, gRank, 
-      gLastLiveTime, gLastOrderTime, remarks, 
+    insert into leaguer (id, leaguer_name, leaguer_sex, 
+      leaguer_pwd, leaguer_tel, leaguer_address, 
+      leaguer_email, leaguer_score, leaguer_rank, 
+      time_lastlive, time_lastorder, remarks, 
       active, create_date)
-    values (#{gid,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR}, #{gsex,jdbcType=VARCHAR}, 
-      #{gpwd,jdbcType=VARCHAR}, #{gtel,jdbcType=INTEGER}, #{gaddress,jdbcType=VARCHAR}, 
-      #{gemail,jdbcType=VARCHAR}, #{gscore,jdbcType=INTEGER}, #{grank,jdbcType=VARCHAR}, 
-      #{glastlivetime,jdbcType=TIMESTAMP}, #{glastordertime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{leaguerName,jdbcType=VARCHAR}, #{leaguerSex,jdbcType=VARCHAR}, 
+      #{leaguerPwd,jdbcType=VARCHAR}, #{leaguerTel,jdbcType=INTEGER}, #{leaguerAddress,jdbcType=VARCHAR}, 
+      #{leaguerEmail,jdbcType=VARCHAR}, #{leaguerScore,jdbcType=INTEGER}, #{leaguerRank,jdbcType=VARCHAR}, 
+      #{timeLastlive,jdbcType=TIMESTAMP}, #{timeLastorder,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
       #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.Leaguer">
     insert into leaguer
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="gid != null">
-        gId,
+      <if test="id != null">
+        id,
       </if>
-      <if test="gname != null">
-        gName,
+      <if test="leaguerName != null">
+        leaguer_name,
       </if>
-      <if test="gsex != null">
-        gSex,
+      <if test="leaguerSex != null">
+        leaguer_sex,
       </if>
-      <if test="gpwd != null">
-        gPwd,
+      <if test="leaguerPwd != null">
+        leaguer_pwd,
       </if>
-      <if test="gtel != null">
-        gTel,
+      <if test="leaguerTel != null">
+        leaguer_tel,
       </if>
-      <if test="gaddress != null">
-        gAddress,
+      <if test="leaguerAddress != null">
+        leaguer_address,
       </if>
-      <if test="gemail != null">
-        gEmail,
+      <if test="leaguerEmail != null">
+        leaguer_email,
       </if>
-      <if test="gscore != null">
-        gScore,
+      <if test="leaguerScore != null">
+        leaguer_score,
       </if>
-      <if test="grank != null">
-        gRank,
+      <if test="leaguerRank != null">
+        leaguer_rank,
       </if>
-      <if test="glastlivetime != null">
-        gLastLiveTime,
+      <if test="timeLastlive != null">
+        time_lastlive,
       </if>
-      <if test="glastordertime != null">
-        gLastOrderTime,
+      <if test="timeLastorder != null">
+        time_lastorder,
       </if>
       <if test="remarks != null">
         remarks,
@@ -168,38 +168,38 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="gid != null">
-        #{gid,jdbcType=INTEGER},
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="gname != null">
-        #{gname,jdbcType=VARCHAR},
+      <if test="leaguerName != null">
+        #{leaguerName,jdbcType=VARCHAR},
       </if>
-      <if test="gsex != null">
-        #{gsex,jdbcType=VARCHAR},
+      <if test="leaguerSex != null">
+        #{leaguerSex,jdbcType=VARCHAR},
       </if>
-      <if test="gpwd != null">
-        #{gpwd,jdbcType=VARCHAR},
+      <if test="leaguerPwd != null">
+        #{leaguerPwd,jdbcType=VARCHAR},
       </if>
-      <if test="gtel != null">
-        #{gtel,jdbcType=INTEGER},
+      <if test="leaguerTel != null">
+        #{leaguerTel,jdbcType=INTEGER},
       </if>
-      <if test="gaddress != null">
-        #{gaddress,jdbcType=VARCHAR},
+      <if test="leaguerAddress != null">
+        #{leaguerAddress,jdbcType=VARCHAR},
       </if>
-      <if test="gemail != null">
-        #{gemail,jdbcType=VARCHAR},
+      <if test="leaguerEmail != null">
+        #{leaguerEmail,jdbcType=VARCHAR},
       </if>
-      <if test="gscore != null">
-        #{gscore,jdbcType=INTEGER},
+      <if test="leaguerScore != null">
+        #{leaguerScore,jdbcType=INTEGER},
       </if>
-      <if test="grank != null">
-        #{grank,jdbcType=VARCHAR},
+      <if test="leaguerRank != null">
+        #{leaguerRank,jdbcType=VARCHAR},
       </if>
-      <if test="glastlivetime != null">
-        #{glastlivetime,jdbcType=TIMESTAMP},
+      <if test="timeLastlive != null">
+        #{timeLastlive,jdbcType=TIMESTAMP},
       </if>
-      <if test="glastordertime != null">
-        #{glastordertime,jdbcType=TIMESTAMP},
+      <if test="timeLastorder != null">
+        #{timeLastorder,jdbcType=TIMESTAMP},
       </if>
       <if test="remarks != null">
         #{remarks,jdbcType=VARCHAR},
@@ -221,38 +221,38 @@
   <update id="updateByExampleSelective" parameterType="map">
     update leaguer
     <set>
-      <if test="record.gid != null">
-        gId = #{record.gid,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.gname != null">
-        gName = #{record.gname,jdbcType=VARCHAR},
+      <if test="record.leaguerName != null">
+        leaguer_name = #{record.leaguerName,jdbcType=VARCHAR},
       </if>
-      <if test="record.gsex != null">
-        gSex = #{record.gsex,jdbcType=VARCHAR},
+      <if test="record.leaguerSex != null">
+        leaguer_sex = #{record.leaguerSex,jdbcType=VARCHAR},
       </if>
-      <if test="record.gpwd != null">
-        gPwd = #{record.gpwd,jdbcType=VARCHAR},
+      <if test="record.leaguerPwd != null">
+        leaguer_pwd = #{record.leaguerPwd,jdbcType=VARCHAR},
       </if>
-      <if test="record.gtel != null">
-        gTel = #{record.gtel,jdbcType=INTEGER},
+      <if test="record.leaguerTel != null">
+        leaguer_tel = #{record.leaguerTel,jdbcType=INTEGER},
       </if>
-      <if test="record.gaddress != null">
-        gAddress = #{record.gaddress,jdbcType=VARCHAR},
+      <if test="record.leaguerAddress != null">
+        leaguer_address = #{record.leaguerAddress,jdbcType=VARCHAR},
       </if>
-      <if test="record.gemail != null">
-        gEmail = #{record.gemail,jdbcType=VARCHAR},
+      <if test="record.leaguerEmail != null">
+        leaguer_email = #{record.leaguerEmail,jdbcType=VARCHAR},
       </if>
-      <if test="record.gscore != null">
-        gScore = #{record.gscore,jdbcType=INTEGER},
+      <if test="record.leaguerScore != null">
+        leaguer_score = #{record.leaguerScore,jdbcType=INTEGER},
       </if>
-      <if test="record.grank != null">
-        gRank = #{record.grank,jdbcType=VARCHAR},
+      <if test="record.leaguerRank != null">
+        leaguer_rank = #{record.leaguerRank,jdbcType=VARCHAR},
       </if>
-      <if test="record.glastlivetime != null">
-        gLastLiveTime = #{record.glastlivetime,jdbcType=TIMESTAMP},
+      <if test="record.timeLastlive != null">
+        time_lastlive = #{record.timeLastlive,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.glastordertime != null">
-        gLastOrderTime = #{record.glastordertime,jdbcType=TIMESTAMP},
+      <if test="record.timeLastorder != null">
+        time_lastorder = #{record.timeLastorder,jdbcType=TIMESTAMP},
       </if>
       <if test="record.remarks != null">
         remarks = #{record.remarks,jdbcType=VARCHAR},
@@ -270,17 +270,17 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update leaguer
-    set gId = #{record.gid,jdbcType=INTEGER},
-      gName = #{record.gname,jdbcType=VARCHAR},
-      gSex = #{record.gsex,jdbcType=VARCHAR},
-      gPwd = #{record.gpwd,jdbcType=VARCHAR},
-      gTel = #{record.gtel,jdbcType=INTEGER},
-      gAddress = #{record.gaddress,jdbcType=VARCHAR},
-      gEmail = #{record.gemail,jdbcType=VARCHAR},
-      gScore = #{record.gscore,jdbcType=INTEGER},
-      gRank = #{record.grank,jdbcType=VARCHAR},
-      gLastLiveTime = #{record.glastlivetime,jdbcType=TIMESTAMP},
-      gLastOrderTime = #{record.glastordertime,jdbcType=TIMESTAMP},
+    set id = #{record.id,jdbcType=INTEGER},
+      leaguer_name = #{record.leaguerName,jdbcType=VARCHAR},
+      leaguer_sex = #{record.leaguerSex,jdbcType=VARCHAR},
+      leaguer_pwd = #{record.leaguerPwd,jdbcType=VARCHAR},
+      leaguer_tel = #{record.leaguerTel,jdbcType=INTEGER},
+      leaguer_address = #{record.leaguerAddress,jdbcType=VARCHAR},
+      leaguer_email = #{record.leaguerEmail,jdbcType=VARCHAR},
+      leaguer_score = #{record.leaguerScore,jdbcType=INTEGER},
+      leaguer_rank = #{record.leaguerRank,jdbcType=VARCHAR},
+      time_lastlive = #{record.timeLastlive,jdbcType=TIMESTAMP},
+      time_lastorder = #{record.timeLastorder,jdbcType=TIMESTAMP},
       remarks = #{record.remarks,jdbcType=VARCHAR},
       active = #{record.active,jdbcType=INTEGER},
       create_date = #{record.createDate,jdbcType=TIMESTAMP}
@@ -291,35 +291,35 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.pojo.Leaguer">
     update leaguer
     <set>
-      <if test="gname != null">
-        gName = #{gname,jdbcType=VARCHAR},
+      <if test="leaguerName != null">
+        leaguer_name = #{leaguerName,jdbcType=VARCHAR},
       </if>
-      <if test="gsex != null">
-        gSex = #{gsex,jdbcType=VARCHAR},
+      <if test="leaguerSex != null">
+        leaguer_sex = #{leaguerSex,jdbcType=VARCHAR},
       </if>
-      <if test="gpwd != null">
-        gPwd = #{gpwd,jdbcType=VARCHAR},
+      <if test="leaguerPwd != null">
+        leaguer_pwd = #{leaguerPwd,jdbcType=VARCHAR},
       </if>
-      <if test="gtel != null">
-        gTel = #{gtel,jdbcType=INTEGER},
+      <if test="leaguerTel != null">
+        leaguer_tel = #{leaguerTel,jdbcType=INTEGER},
       </if>
-      <if test="gaddress != null">
-        gAddress = #{gaddress,jdbcType=VARCHAR},
+      <if test="leaguerAddress != null">
+        leaguer_address = #{leaguerAddress,jdbcType=VARCHAR},
       </if>
-      <if test="gemail != null">
-        gEmail = #{gemail,jdbcType=VARCHAR},
+      <if test="leaguerEmail != null">
+        leaguer_email = #{leaguerEmail,jdbcType=VARCHAR},
       </if>
-      <if test="gscore != null">
-        gScore = #{gscore,jdbcType=INTEGER},
+      <if test="leaguerScore != null">
+        leaguer_score = #{leaguerScore,jdbcType=INTEGER},
       </if>
-      <if test="grank != null">
-        gRank = #{grank,jdbcType=VARCHAR},
+      <if test="leaguerRank != null">
+        leaguer_rank = #{leaguerRank,jdbcType=VARCHAR},
       </if>
-      <if test="glastlivetime != null">
-        gLastLiveTime = #{glastlivetime,jdbcType=TIMESTAMP},
+      <if test="timeLastlive != null">
+        time_lastlive = #{timeLastlive,jdbcType=TIMESTAMP},
       </if>
-      <if test="glastordertime != null">
-        gLastOrderTime = #{glastordertime,jdbcType=TIMESTAMP},
+      <if test="timeLastorder != null">
+        time_lastorder = #{timeLastorder,jdbcType=TIMESTAMP},
       </if>
       <if test="remarks != null">
         remarks = #{remarks,jdbcType=VARCHAR},
@@ -331,23 +331,23 @@
         create_date = #{createDate,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where gId = #{gid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.neuedu.pojo.Leaguer">
     update leaguer
-    set gName = #{gname,jdbcType=VARCHAR},
-      gSex = #{gsex,jdbcType=VARCHAR},
-      gPwd = #{gpwd,jdbcType=VARCHAR},
-      gTel = #{gtel,jdbcType=INTEGER},
-      gAddress = #{gaddress,jdbcType=VARCHAR},
-      gEmail = #{gemail,jdbcType=VARCHAR},
-      gScore = #{gscore,jdbcType=INTEGER},
-      gRank = #{grank,jdbcType=VARCHAR},
-      gLastLiveTime = #{glastlivetime,jdbcType=TIMESTAMP},
-      gLastOrderTime = #{glastordertime,jdbcType=TIMESTAMP},
+    set leaguer_name = #{leaguerName,jdbcType=VARCHAR},
+      leaguer_sex = #{leaguerSex,jdbcType=VARCHAR},
+      leaguer_pwd = #{leaguerPwd,jdbcType=VARCHAR},
+      leaguer_tel = #{leaguerTel,jdbcType=INTEGER},
+      leaguer_address = #{leaguerAddress,jdbcType=VARCHAR},
+      leaguer_email = #{leaguerEmail,jdbcType=VARCHAR},
+      leaguer_score = #{leaguerScore,jdbcType=INTEGER},
+      leaguer_rank = #{leaguerRank,jdbcType=VARCHAR},
+      time_lastlive = #{timeLastlive,jdbcType=TIMESTAMP},
+      time_lastorder = #{timeLastorder,jdbcType=TIMESTAMP},
       remarks = #{remarks,jdbcType=VARCHAR},
       active = #{active,jdbcType=INTEGER},
       create_date = #{createDate,jdbcType=TIMESTAMP}
-    where gId = #{gid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

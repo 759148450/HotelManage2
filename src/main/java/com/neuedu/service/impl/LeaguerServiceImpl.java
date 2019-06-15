@@ -29,10 +29,10 @@ public class LeaguerServiceImpl implements LeaguerService {
         PageHelper.startPage(leaguer.getPageNo(), leaguer.getPageSize());
         LeaguerExample leaguerExample = new LeaguerExample();
         LeaguerExample.Criteria criteria = leaguerExample.createCriteria();
-        if (StringUtils.isNotBlank(leaguer.getGname()))
-            criteria.andGnameLike("%"+leaguer.getGname()+"%");
-        if (leaguer.getGid()!=null)
-            criteria.andGidEqualTo(leaguer.getGid());
+        if (StringUtils.isNotBlank(leaguer.getLeaguerName()))
+            criteria.andLeaguerNameLike("%"+leaguer.getLeaguerName()+"%");
+        if (leaguer.getId()!=null)
+            criteria.andIdEqualTo(leaguer.getId());
 
         return leaguerMapper.selectByExample(leaguerExample);
     }
@@ -44,8 +44,8 @@ public class LeaguerServiceImpl implements LeaguerService {
     }
 
     @Override
-    public Leaguer getleaguerById(int gid) {
-        return leaguerMapper.selectByPrimaryKey(gid);
+    public Leaguer getleaguerById(int id) {
+        return leaguerMapper.selectByPrimaryKey(id);
     }
 
     @Override
