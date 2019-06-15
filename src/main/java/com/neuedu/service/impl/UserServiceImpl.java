@@ -22,10 +22,15 @@ public class UserServiceImpl implements UserService {
         PageHelper.startPage(user.getPageNo(), user.getPageSize());
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
-        if (StringUtils.isNotBlank(user.getUserName()))
-            criteria.andUserNameLike("%"+user.getUserName()+"%");
-        if(user.getId()!=null)
-            criteria.andIdEqualTo(user.getId());
+        if (StringUtils.isNotBlank(user.getUserName())) {
+            criteria.andUserNameLike("%" + user.getUserName() + "%").andActiveEqualTo(1);
+        }
+        if(user.getId()!=null) {
+            criteria.andIdEqualTo(user.getId()).andActiveEqualTo(1);
+        }
+        else {
+            criteria.andActiveEqualTo(1);
+        }
 
         return userMapper.selectByExample(userExample);
     }

@@ -22,10 +22,11 @@ public class FloorServiceImpl implements FloorService {
         PageHelper.startPage(floor.getPageNo(), floor.getPageSize());
         FloorExample floorExample = new FloorExample();
         FloorExample.Criteria criteria = floorExample.createCriteria();
-        if (StringUtils.isNotBlank(floor.getFloorName()))
-            criteria.andFloorNameLike("%"+floor.getFloorName()+"%");
-        if(floor.getActive()!=null)
-            criteria.andActiveEqualTo(floor.getActive());
+        if (StringUtils.isNotBlank(floor.getFloorName())){
+            criteria.andFloorNameLike("%"+floor.getFloorName()+"%").andActiveEqualTo(1);
+        }else {
+            criteria.andActiveEqualTo(1);
+        }
 
         return floorMapper.selectByExample(floorExample);
     }

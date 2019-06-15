@@ -22,10 +22,11 @@ public class GuestTypeServiceImpl implements GuestTypeService {
         PageHelper.startPage(guestType.getPageNo(), guestType.getPageSize());
         GuestTypeExample guestTypeExample = new GuestTypeExample();
         GuestTypeExample.Criteria criteria = guestTypeExample.createCriteria();
-        if (StringUtils.isNotBlank(guestType.getTypeName()))
-            criteria.andTypeNameLike("%"+guestType.getTypeName()+"%");
-        if(guestType.getActive()!=null)
-            criteria.andActiveEqualTo(guestType.getActive());
+        if (StringUtils.isNotBlank(guestType.getTypeName())){
+            criteria.andTypeNameLike("%"+guestType.getTypeName()+"%").andActiveEqualTo(1);
+        }else {
+            criteria.andActiveEqualTo(1);
+        }
 
         return guestTypeMapper.selectByExample(guestTypeExample);
     }

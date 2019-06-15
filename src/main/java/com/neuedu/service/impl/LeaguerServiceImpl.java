@@ -29,10 +29,15 @@ public class LeaguerServiceImpl implements LeaguerService {
         PageHelper.startPage(leaguer.getPageNo(), leaguer.getPageSize());
         LeaguerExample leaguerExample = new LeaguerExample();
         LeaguerExample.Criteria criteria = leaguerExample.createCriteria();
-        if (StringUtils.isNotBlank(leaguer.getLeaguerName()))
-            criteria.andLeaguerNameLike("%"+leaguer.getLeaguerName()+"%");
-        if (leaguer.getId()!=null)
-            criteria.andIdEqualTo(leaguer.getId());
+        if (StringUtils.isNotBlank(leaguer.getLeaguerName())) {
+            criteria.andLeaguerNameLike("%" + leaguer.getLeaguerName() + "%").andActiveEqualTo(1);
+        }
+        if (leaguer.getId()!=null) {
+            criteria.andIdEqualTo(leaguer.getId()).andActiveEqualTo(1);
+        }
+        else {
+            criteria.andActiveEqualTo(1);
+        }
 
         return leaguerMapper.selectByExample(leaguerExample);
     }
