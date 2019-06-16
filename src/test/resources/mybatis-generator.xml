@@ -13,7 +13,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/hotel?useUnicode=true&amp;characterEncoding=utf8"
                         userId="root"
-                        password="12345">
+                        password="123456">
         </jdbcConnection>
 
 
@@ -48,7 +48,8 @@
         <!--<table tableName="guest_type"></table>-->
         <!--<table tableName="floor"></table>-->
         <!--<table tableName="goods_type"></table>-->
-        <table tableName="goods"></table>
+        <!--<table tableName="goods"></table>-->
+        <table tableName="rooms"></table>
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />
