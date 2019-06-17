@@ -13,6 +13,12 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * zyp
+ * 客房管理
+ * 2019-6-17
+ */
+
 @Service
 public class RoomsServiceImpl implements RoomsService {
     @Resource
@@ -23,12 +29,17 @@ public class RoomsServiceImpl implements RoomsService {
         PageHelper.startPage(rooms.getPageNo(), rooms.getPageSize());
         RoomsExample roomsExample = new RoomsExample();
         RoomsExample.Criteria criteria = roomsExample.createCriteria();
+        //        模糊查询
         if (rooms.getId()!=null) {
             criteria.andIdEqualTo(rooms.getId()).andActiveEqualTo(1);
         }if(rooms.getFloorId()!=null){
             criteria.andFloorIdEqualTo(rooms.getFloorId()).andActiveEqualTo(1);
         }if(rooms.getRoomTypeid()!=null){
             criteria.andRoomTypeidEqualTo(rooms.getRoomTypeid()).andActiveEqualTo(1);
+        }if(rooms.getNormalPrice()!=null){//根据价格查询
+            criteria.andNormalPriceEqualTo(rooms.getNormalPrice()).andActiveEqualTo(1);
+        } if (rooms.getStatus()!=null){
+            criteria.andStatusEqualTo(rooms.getStatus()).andActiveEqualTo(1);
         }
         else {
             criteria.andActiveEqualTo(1);

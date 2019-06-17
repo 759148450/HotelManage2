@@ -17,6 +17,12 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * zyp
+ * 客房管理
+ * 2019-6-17
+ */
+
 @RestController
 @RequestMapping("/rooms")
 public class RoomsController {
