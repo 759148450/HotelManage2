@@ -4,6 +4,7 @@ import com.neuedu.dao.OrderManageMapper;
 import com.neuedu.pojo.OrderManage;
 import com.neuedu.pojo.OrderManageExample;
 import com.neuedu.service.OrderManageService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
@@ -34,6 +35,11 @@ public class OrderManageServiceImpl implements OrderManageService {
         if(orderManage.getBookStatus()!=null){
             criteria.andBookStatusEqualTo(orderManage.getBookStatus()).andActiveEqualTo(1);
         }
+        /*根据预定人姓名模糊查询*/
+        if(StringUtils.isNotBlank(orderManage.getResidents())){
+            criteria.andResidentsLike("%"+orderManage.getResidents()+"%").andActiveEqualTo(1);
+        }
+
         else {
             criteria.andActiveEqualTo(1);
         }

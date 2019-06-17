@@ -2,10 +2,11 @@ package com.neuedu.pojo;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OrderManage extends  MyPage{
+public class OrderManage extends  MyPage implements Serializable {
     private Integer id;
 
     private Integer originalRoomId;

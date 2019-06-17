@@ -44,13 +44,13 @@ public class RoomsServiceImpl implements RoomsService {
         else {
             criteria.andActiveEqualTo(1);
         }
-
         return roomsMapper.selectByExample(roomsExample);
     }
 
     @Override
     public List<Rooms> getAll(Rooms rooms) {
         RoomsExample roomsExample = new RoomsExample();
+//        roomsExample.createCriteria().andActiveEqualTo(1);
         return roomsMapper.selectByExample(roomsExample);
     }
 
