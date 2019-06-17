@@ -5,12 +5,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/hotel?useUnicode=true&characterEncoding=utf8
     username: root
-    password: 123456
+    password: 12345
     hikari:
       minimum-idle: 8
       maximum-pool-size: 20
   jackson:
-    date-format: yyyy-MM-dd
+    date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 mybatis:
   type-aliases-package: com.neuedu.pojo
