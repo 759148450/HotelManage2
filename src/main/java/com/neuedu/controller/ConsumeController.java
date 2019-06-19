@@ -1,12 +1,8 @@
 package com.neuedu.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.neuedu.pojo.Consume;
-import com.neuedu.pojo.Goods;
-import com.neuedu.pojo.GoodsType;
-import com.neuedu.service.ConsumeService;
-import com.neuedu.service.GoodsService;
-import com.neuedu.service.GoodsTypeService;
+import com.neuedu.pojo.*;
+import com.neuedu.service.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * zyp
@@ -31,6 +29,8 @@ public class ConsumeController {
     GoodsService goodsService;
     @Resource
     GoodsTypeService goodsTypeService;
+    @Resource
+    RoomsService roomsService;
     @GetMapping("/list")
     public PageInfo<Consume> getFloor(Consume consume){
         List<Consume> consumes =consumeService.getConsumes(consume);
@@ -58,14 +58,25 @@ public class ConsumeController {
     public Consume getOne(Integer id){
         return consumeService.getconsumeById(id);
     }
-    /*查询相关联的所有商品*/
-    @GetMapping("/getAllGoods")
-    public List<Goods> getAll(Goods goods){
-        return goodsService.getAll(goods);
+
+    /*查询所有的商品和商品类型和房间编号*/
+    @GetMapping("/getAllGoodsAndRooms")
+    public Map<String,List<?>> getAllRoomsAndLeaguers(){
+        Map<String,List<?>> map = new HashMap<>();
+        map.put("goodss", goodsService.getAll(new Goods()));
+        map.put("goodsTypes", goodsTypeService.getAll(new GoodsType()));
+        map.put("rooms", roomsService.getAll(new Rooms()));
+        return map;
     }
-    /*查询相关联的所有商品类型*/
-    @GetMapping("/getAllGoodsType")
-    public List<GoodsType> getAll(GoodsType goodsType){
-        return goodsTypeService.getAll(goodsType);
-    }
+
+//    /*查询相关联的所有商品*/
+//    @GetMapping("/getAllGoods")
+//    public List<Goods> getAll(Goods goods){
+//        return goodsService.getAll(goods);
+//    }
+//    /*查询相关联的所有商品类型*/
+//    @GetMapping("/getAllGoodsType")
+//    public List<GoodsType> getAll(GoodsType goodsType){
+//        return goodsTypeService.getAll(goodsType);
+//    }
 }
