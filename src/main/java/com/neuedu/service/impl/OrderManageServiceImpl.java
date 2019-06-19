@@ -23,7 +23,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
         OrderManageExample orderManageExample = new OrderManageExample();
         OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
-        /*根据订单编号查询*/
+        /*根据订单编号模糊查询*/
         if (orderManage.getId()!=null) {
             criteria.andIdEqualTo(orderManage.getId()).andActiveEqualTo(1);
         }
@@ -39,7 +39,10 @@ public class OrderManageServiceImpl implements OrderManageService {
         if(StringUtils.isNotBlank(orderManage.getResidents())){
             criteria.andResidentsLike("%"+orderManage.getResidents()+"%").andActiveEqualTo(1);
         }
-
+        /*根据房间类型名称进行模糊查询*/
+        if(StringUtils.isNotBlank(orderManage.getRoomsTypeName())){
+            criteria.andRoomsTypeNameLike("%"+orderManage.getRoomsTypeName()+"%").andActiveEqualTo(1);
+        }
         else {
             criteria.andActiveEqualTo(1);
         }
@@ -60,7 +63,6 @@ public class OrderManageServiceImpl implements OrderManageService {
     public OrderManage getorderManageById(int id) {
         return orderManageMapper.selectByPrimaryKey(id);
     }
-
     @Override
     public int add(OrderManage orderManage) {
         orderManage.setCreateDate(new Date());

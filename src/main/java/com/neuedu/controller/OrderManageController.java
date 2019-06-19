@@ -45,6 +45,11 @@ public class OrderManageController {
     }
     @PostMapping("/add")
     public int add(OrderManage orderManage){
+        /*将客房变为已预定状态*/
+        Rooms rooms = new Rooms();
+        rooms.setId(orderManage.getOriginalRoomId());
+        rooms.setStatus(1);
+        roomsService.update(rooms);
         return orderManageService.add(orderManage);
     }
     @GetMapping("/del")
@@ -64,7 +69,10 @@ public class OrderManageController {
     @GetMapping("/getAllRoomsAndLeaguers")
     public Map<String,List<?>> getAllRoomsAndLeaguers(){
         Map<String,List<?>> map = new HashMap<>();
-        map.put("rooms", roomsService.getAll(new Rooms()));
+        Rooms rooms = new Rooms();
+        rooms.setActive(1);
+        rooms.setStatus(0);
+        map.put("rooms", roomsService.getAll(rooms));
         Leaguer leaguer = new Leaguer();
         leaguer.setActive(1);
         map.put("leaguers", leaguerService.getAll(leaguer));

@@ -1545,6 +1545,146 @@ public class OrderManageExample {
             addCriterion("create_date not between", value1, value2, "createDate");
             return (Criteria) this;
         }
+
+        public Criteria andRoomsTypeNameIsNull() {
+            addCriterion("rooms_type_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameIsNotNull() {
+            addCriterion("rooms_type_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameEqualTo(String value) {
+            addCriterion("rooms_type_name =", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameNotEqualTo(String value) {
+            addCriterion("rooms_type_name <>", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameGreaterThan(String value) {
+            addCriterion("rooms_type_name >", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameGreaterThanOrEqualTo(String value) {
+            addCriterion("rooms_type_name >=", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameLessThan(String value) {
+            addCriterion("rooms_type_name <", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameLessThanOrEqualTo(String value) {
+            addCriterion("rooms_type_name <=", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameLike(String value) {
+            addCriterion("rooms_type_name like", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameNotLike(String value) {
+            addCriterion("rooms_type_name not like", value, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameIn(List<String> values) {
+            addCriterion("rooms_type_name in", values, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameNotIn(List<String> values) {
+            addCriterion("rooms_type_name not in", values, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameBetween(String value1, String value2) {
+            addCriterion("rooms_type_name between", value1, value2, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomsTypeNameNotBetween(String value1, String value2) {
+            addCriterion("rooms_type_name not between", value1, value2, "roomsTypeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameIsNull() {
+            addCriterion("user_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameIsNotNull() {
+            addCriterion("user_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameEqualTo(String value) {
+            addCriterion("user_name =", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotEqualTo(String value) {
+            addCriterion("user_name <>", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameGreaterThan(String value) {
+            addCriterion("user_name >", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameGreaterThanOrEqualTo(String value) {
+            addCriterion("user_name >=", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLessThan(String value) {
+            addCriterion("user_name <", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLessThanOrEqualTo(String value) {
+            addCriterion("user_name <=", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameLike(String value) {
+            addCriterion("user_name like", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotLike(String value) {
+            addCriterion("user_name not like", value, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameIn(List<String> values) {
+            addCriterion("user_name in", values, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotIn(List<String> values) {
+            addCriterion("user_name not in", values, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameBetween(String value1, String value2) {
+            addCriterion("user_name between", value1, value2, "userName");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserNameNotBetween(String value1, String value2) {
+            addCriterion("user_name not between", value1, value2, "userName");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -1,12 +1,9 @@
 package com.neuedu.pojo;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OrderManage extends  MyPage implements Serializable {
+public class OrderManage extends MyPage{
     private Integer id;
 
     private Integer originalRoomId;
@@ -30,9 +27,9 @@ public class OrderManage extends  MyPage implements Serializable {
     private String credentialsNum;
 
     private String phone;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
     private Date arrivalTime;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
     private Date leaveTime;
 
     private Integer personNum;
@@ -50,12 +47,12 @@ public class OrderManage extends  MyPage implements Serializable {
     private String remarks;
 
     private Integer active;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
     private Date createDate;
 
-    private Rooms rooms;
+    private String roomsTypeName;
 
-    private Leaguer leaguer;
+    private String userName;
 
     public Integer getId() {
         return id;
@@ -241,19 +238,19 @@ public class OrderManage extends  MyPage implements Serializable {
         this.createDate = createDate;
     }
 
-    public Rooms getRooms() {
-        return rooms;
+    public String getRoomsTypeName() {
+        return roomsTypeName;
     }
 
-    public void setRooms(Rooms rooms) {
-        this.rooms = rooms;
+    public void setRoomsTypeName(String roomsTypeName) {
+        this.roomsTypeName = roomsTypeName == null ? null : roomsTypeName.trim();
     }
 
-    public Leaguer getLeaguer() {
-        return leaguer;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setLeaguer(Leaguer leaguer) {
-        this.leaguer = leaguer;
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 }
