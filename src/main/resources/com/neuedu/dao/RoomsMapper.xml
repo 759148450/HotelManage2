@@ -3,6 +3,7 @@
 <mapper namespace="com.neuedu.dao.RoomsMapper">
   <resultMap id="BaseResultMap" type="com.neuedu.pojo.Rooms">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
     <result column="room_type" jdbcType="VARCHAR" property="roomType" />
     <result column="room_typeid" jdbcType="INTEGER" property="roomTypeid" />
     <result column="status" jdbcType="INTEGER" property="status" />
@@ -17,6 +18,7 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <association  property="floor" column="floor_id" select="com.neuedu.dao.FloorMapper.selectByPrimaryKey"></association>
     <association  property="guestType" column="room_typeid" select="com.neuedu.dao.GuestTypeMapper.selectByPrimaryKey"></association>
+
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -77,8 +79,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, room_type, room_typeid, status, floor_name, floor_id, normal_price, discount_price, 
-    gvip_price, svip_price, remarks, active, create_date
+    id, room_id, room_type, room_typeid, status, floor_name, floor_id, normal_price, 
+    discount_price, gvip_price, svip_price, remarks, active, create_date
   </sql>
   <select id="selectByExample" parameterType="com.neuedu.pojo.RoomsExample" resultMap="BaseResultMap">
     select
@@ -111,22 +113,25 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.neuedu.pojo.Rooms">
-    insert into rooms (id, room_type, room_typeid, 
-      status, floor_name, floor_id, 
-      normal_price, discount_price, gvip_price, 
-      svip_price, remarks, active, 
-      create_date)
-    values (#{id,jdbcType=INTEGER}, #{roomType,jdbcType=VARCHAR}, #{roomTypeid,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{floorName,jdbcType=VARCHAR}, #{floorId,jdbcType=INTEGER}, 
-      #{normalPrice,jdbcType=DECIMAL}, #{discountPrice,jdbcType=DECIMAL}, #{gvipPrice,jdbcType=DECIMAL}, 
-      #{svipPrice,jdbcType=DECIMAL}, #{remarks,jdbcType=VARCHAR}, #{active,jdbcType=INTEGER}, 
-      #{createDate,jdbcType=TIMESTAMP})
+    insert into rooms (id, room_id, room_type, 
+      room_typeid, status, floor_name, 
+      floor_id, normal_price, discount_price, 
+      gvip_price, svip_price, remarks, 
+      active, create_date)
+    values (#{id,jdbcType=INTEGER}, #{roomId,jdbcType=VARCHAR}, #{roomType,jdbcType=VARCHAR}, 
+      #{roomTypeid,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{floorName,jdbcType=VARCHAR}, 
+      #{floorId,jdbcType=INTEGER}, #{normalPrice,jdbcType=DECIMAL}, #{discountPrice,jdbcType=DECIMAL}, 
+      #{gvipPrice,jdbcType=DECIMAL}, #{svipPrice,jdbcType=DECIMAL}, #{remarks,jdbcType=VARCHAR}, 
+      #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.Rooms">
     insert into rooms
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="roomId != null">
+        room_id,
       </if>
       <if test="roomType != null">
         room_type,
@@ -168,6 +173,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=VARCHAR},
       </if>
       <if test="roomType != null">
         #{roomType,jdbcType=VARCHAR},
@@ -219,6 +227,9 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.roomId != null">
+        room_id = #{record.roomId,jdbcType=VARCHAR},
+      </if>
       <if test="record.roomType != null">
         room_type = #{record.roomType,jdbcType=VARCHAR},
       </if>
@@ -263,6 +274,7 @@
   <update id="updateByExample" parameterType="map">
     update rooms
     set id = #{record.id,jdbcType=INTEGER},
+      room_id = #{record.roomId,jdbcType=VARCHAR},
       room_type = #{record.roomType,jdbcType=VARCHAR},
       room_typeid = #{record.roomTypeid,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
@@ -282,6 +294,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.pojo.Rooms">
     update rooms
     <set>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=VARCHAR},
+      </if>
       <if test="roomType != null">
         room_type = #{roomType,jdbcType=VARCHAR},
       </if>
@@ -323,7 +338,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.neuedu.pojo.Rooms">
     update rooms
-    set room_type = #{roomType,jdbcType=VARCHAR},
+    set room_id = #{roomId,jdbcType=VARCHAR},
+      room_type = #{roomType,jdbcType=VARCHAR},
       room_typeid = #{roomTypeid,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       floor_name = #{floorName,jdbcType=VARCHAR},

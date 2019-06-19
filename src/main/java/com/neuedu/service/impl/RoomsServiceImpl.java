@@ -4,9 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.neuedu.dao.RoomsMapper;
 import com.neuedu.pojo.Rooms;
 import com.neuedu.pojo.RoomsExample;
-import com.neuedu.service.FloorService;
 import com.neuedu.service.RoomsService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -30,8 +28,8 @@ public class RoomsServiceImpl implements RoomsService {
         RoomsExample roomsExample = new RoomsExample();
         RoomsExample.Criteria criteria = roomsExample.createCriteria();
         //        模糊查询
-        if (rooms.getId()!=null) {
-            criteria.andIdEqualTo(rooms.getId()).andActiveEqualTo(1);
+        if (rooms.getRoomId()!=null) {
+            criteria.andRoomIdEqualTo(rooms.getRoomId()).andActiveEqualTo(1);
         }if(rooms.getFloorId()!=null){
             criteria.andFloorIdEqualTo(rooms.getFloorId()).andActiveEqualTo(1);
         }if(rooms.getRoomTypeid()!=null){

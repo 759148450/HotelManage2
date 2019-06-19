@@ -1,11 +1,12 @@
 package com.neuedu.pojo;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Rooms extends MyPage implements Serializable {
+public class Rooms extends MyPage{
     private Integer id;
+
+    private String roomId;
 
     private String roomType;
 
@@ -35,12 +36,21 @@ public class Rooms extends MyPage implements Serializable {
 
     private GuestType guestType;
 
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId == null ? null : roomId.trim();
     }
 
     public String getRoomType() {
