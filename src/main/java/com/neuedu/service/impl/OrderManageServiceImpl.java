@@ -43,12 +43,27 @@ public class OrderManageServiceImpl implements OrderManageService {
         if(StringUtils.isNotBlank(orderManage.getRoomsTypeName())){
             criteria.andRoomsTypeNameLike("%"+orderManage.getRoomsTypeName()+"%").andActiveEqualTo(1);
         }
+
+        /*根据入住人名称进行模糊查询 --zyp*/
+        if(StringUtils.isNotBlank(orderManage.getResidents())){
+            criteria.andResidentsLike("%"+orderManage.getResidents()+"%").andActiveEqualTo(1);
+        }
         else {
             criteria.andActiveEqualTo(1);
         }
 //        if(orderManage.getActive()!=null)
 //            criteria.andActiveEqualTo(orderManage.getActive());
 
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
+    //查询入住状态的所有信息 -zyp
+    public List<OrderManage> getOrderManages2(OrderManage orderManage) {
+
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+            criteria.andBookStatusEqualTo(1);
         return orderManageMapper.selectByExample(orderManageExample);
     }
 

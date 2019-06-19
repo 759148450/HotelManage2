@@ -49,8 +49,9 @@
         <!--<table tableName="floor"></table>-->
         <!--<table tableName="goods_type"></table>-->
         <!--<table tableName="goods"></table>-->
-        <table tableName="rooms"></table>
+        <!--<table tableName="rooms"></table>-->
         <!--<table tableName="order_manage"></table>-->
+        <table tableName="order_form"></table>
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />
