@@ -71,4 +71,10 @@ public class RoomsController {
     public List<GuestType> getAll(GuestType guestType){
         return guestTypeService.getAll(guestType);
     }
+    /*查询相关联的所有有效房间类型信息*/
+    @GetMapping("/getUsefulAllGuestType")
+    public List<GuestType> getUsefulAll(GuestType guestType){
+        guestType.setActive(1);
+        return guestTypeService.getAll(guestType);
+    }
 }

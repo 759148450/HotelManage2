@@ -45,6 +45,29 @@ public class OrderManageController {
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages2);
         return pageInfo;
     }
+    //ldf 2019-6-20
+    @GetMapping("/listLiving")
+    public PageInfo<OrderManage> getLivingOrderManage(OrderManage orderManage){
+        orderManage.setBookStatus(2);
+        List<OrderManage> orderManages =orderManageService.getOrderManages(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
+    @PostMapping("/change")
+    public int change(@Valid OrderManage orderManage ,BindingResult bindingResult){
+        Integer orgRoomId=orderManage.getOriginalRoomId();
+        Integer curRoomId=orderManage.getCurrentRoomId();
+        orderManage.setOriginalRoomId(null);
+        orderManage.setCurrentRoomId(orgRoomId);
+        orderManage.setActive(0);
+        orderManageService.update(orderManage);//删除原来的订单表
+        orderManage.setOriginalRoomId(orgRoomId);
+        orderManage.setCurrentRoomId(curRoomId);
+        orderManage.setId(null);
+        orderManage.setActive(1);
+        return orderManageService.add(orderManage);//创建新订单表
+    }
+    //-----end----------
 
     @GetMapping("/getAll")
     public List<OrderManage> getAll(OrderManage orderManage){
