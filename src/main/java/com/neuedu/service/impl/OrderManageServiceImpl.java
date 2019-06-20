@@ -66,6 +66,48 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
+    //ZYP 查询已入住和已退房状态的房间
+    @Override
+    public List<OrderManage> getLivedOrderManages(OrderManage orderManage) {
+
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+        OrderManageExample.Criteria criteria2 = orderManageExample.createCriteria();
+        /*根据订单编号模糊查询*/
+        if (orderManage.getId()!=null) {
+            criteria.andIdEqualTo(orderManage.getId()).andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andIdEqualTo(orderManage.getId()).andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }
+        /*根据现在房间编号查询*/
+        if (orderManage.getCurrentRoomId()!=null) {
+            criteria.andCurrentRoomIdEqualTo(orderManage.getCurrentRoomId()).andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andCurrentRoomIdEqualTo(orderManage.getCurrentRoomId()).andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }
+        /*根据现在房间号模糊查询*/
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())){
+            criteria.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }
+        /*根据入住人名称进行模糊查询 --zyp*/
+        if(StringUtils.isNotBlank(orderManage.getResidents())){
+            criteria.andResidentsLike("%"+orderManage.getResidents()+"%").andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andResidentsLike("%"+orderManage.getResidents()+"%").andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }
+        else {
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }
+
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
+
 
     @Override
     public List<OrderManage> getAll(OrderManage orderManage) {

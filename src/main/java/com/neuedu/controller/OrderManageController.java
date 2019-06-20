@@ -38,6 +38,15 @@ public class OrderManageController {
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
+
+    //ZYP 查询已入住和已退房状态的房间
+    @GetMapping("/listLived")
+    public PageInfo<OrderManage> getLivedOrderManage(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.getLivedOrderManages(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
+
     //ldf 2019-6-20
     @GetMapping("/listLiving")
     public PageInfo<OrderManage> getLivingOrderManage(OrderManage orderManage){

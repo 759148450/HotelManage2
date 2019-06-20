@@ -5,6 +5,7 @@ import com.neuedu.dao.OrderFormMapper;
 import com.neuedu.pojo.OrderForm;
 import com.neuedu.pojo.OrderFormExample;
 import com.neuedu.service.OrderFormService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,8 +24,9 @@ public class OrderFormServiceImpl implements OrderFormService {
         OrderFormExample.Criteria criteria = orderFormExample.createCriteria();
         if(orderForm.getId()!=null) {
             criteria.andIdEqualTo(orderForm.getId()).andActiveEqualTo(1);
-        }if(orderForm.getRoomId()!=null) {
-            criteria.andRoomIdEqualTo(orderForm.getRoomId()).andActiveEqualTo(1);
+        }  /*根据现在房间号模糊查询*/
+        if (StringUtils.isNotBlank(orderForm.getRoomId())){
+            criteria.andRoomIdLike("%"+orderForm.getRoomId()+"%").andActiveEqualTo(1);
         }else {
             criteria.andActiveEqualTo(1);
         }

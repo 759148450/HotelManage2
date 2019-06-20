@@ -9,6 +9,7 @@ import java.util.List;
  * */
 public interface OrderManageService {
     List<OrderManage> getOrderManages(OrderManage orderManage);
+    List<OrderManage> getLivedOrderManages(OrderManage orderManage);//ZYP 查询已入住和已退房状态的房间
     List<OrderManage> getAll(OrderManage orderManage);
     OrderManage getorderManageById(int id);
     int add(OrderManage orderManage);

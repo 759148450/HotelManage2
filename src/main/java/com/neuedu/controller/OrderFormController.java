@@ -37,6 +37,8 @@ public class OrderFormController {
     }
     @PostMapping("/add")
     public int add(OrderForm orderForm , OrderManage orderManage){
+        System.out.println("房间号id"+orderManage.getCurrentRoomId());
+        System.out.println("入住单号id"+orderManage.getId());
         /*将客房变为空房状态*/
         Rooms rooms = new Rooms();
         rooms.setId(orderManage.getCurrentRoomId());
@@ -44,7 +46,7 @@ public class OrderFormController {
         roomsService.update(rooms);
         //将order_manage状态变为已退房
         OrderManage orderManage1 = new OrderManage();
-        orderManage1.setId(orderManage.getCurrentRoomId());
+        orderManage1.setId(orderManage.getId());
         orderManage1.setBookStatus(3);
         orderManageService.update(orderManage1);
         //进行结账处理
