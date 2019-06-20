@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class GoodsType extends MyPage implements Serializable {
     private Integer id;
@@ -16,6 +17,7 @@ public class GoodsType extends MyPage implements Serializable {
     private Date createTime;
 
     private Integer active;
+    private Integer counts;
 
     public Integer getId() {
         return id;
@@ -55,5 +57,14 @@ public class GoodsType extends MyPage implements Serializable {
 
     public void setActive(Integer active) {
         this.active = active;
+    }
+
+
+    public Integer getCounts() {
+        return counts;
+    }
+
+    public void setCounts(Integer counts) {
+        this.counts = counts;
     }
 }

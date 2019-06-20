@@ -275,4 +275,11 @@
       goods_typename = #{goodsTypename,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectGoodsByGoodsTypeId" resultType="java.lang.Integer">
+    SELECT
+   count(1)
+    FROM
+   goods
+    WHERE goods_typeid = #{goodsTypeid, jdbcType=INTEGER} and active=1
+  </select>
 </mapper>

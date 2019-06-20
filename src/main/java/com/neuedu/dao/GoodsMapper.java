@@ -17,6 +17,7 @@ public interface GoodsMapper {
     int insertSelective(Goods record);
 
     List<Goods> selectByExample(GoodsExample example);
+    List<Goods> selectGoodsByGoodsTypeId(Integer goodsTypeid);
 
     Goods selectByPrimaryKey(Integer id);
 

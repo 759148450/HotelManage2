@@ -7,6 +7,7 @@
     <result column="goods_typenotes" jdbcType="VARCHAR" property="goodsTypenotes" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="active" jdbcType="INTEGER" property="active" />
+    <association  property="counts" column="id" javaType="INTEGER" select="com.neuedu.dao.GoodsMapper.selectGoodsByGoodsTypeId"></association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
