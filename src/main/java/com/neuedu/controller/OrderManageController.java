@@ -71,7 +71,7 @@ public class OrderManageController {
     public int add(OrderManage orderManage){
         /*将客房变为已预定状态*/
         Rooms rooms = new Rooms();
-        rooms.setId(orderManage.getOriginalRoomId());
+        rooms.setId(orderManage.getCurrentRoomId());
         rooms.setStatus(1);
         roomsService.update(rooms);
         return orderManageService.add(orderManage);
@@ -87,6 +87,16 @@ public class OrderManageController {
     }
     @GetMapping("/updateBookStutas")
     public int updateBookStutas(OrderManage orderManage){
+        System.out.println("房间状态"+orderManage.getBookStatus());
+        System.out.println("房间状态"+orderManage.getCurrentRoomId());
+        if(orderManage.getBookStatus()==1){
+            /*将客房变为已空房状态*/
+            Rooms rooms = new Rooms();
+            rooms.setId(orderManage.getCurrentRoomId());
+            rooms.setStatus(0);
+            roomsService.update(rooms);
+        }
+
         return orderManageService.update(orderManage);
     }
     @GetMapping("/getOne")
