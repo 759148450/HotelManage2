@@ -38,13 +38,6 @@ public class OrderManageController {
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
-    //zyp 只查询状态入住状态的信息
-    @GetMapping("/livedlist")
-    public PageInfo<OrderManage> getOrderManage2(OrderManage orderManage){
-        List<OrderManage> orderManages2 =orderManageService.getOrderManages2(orderManage);
-        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages2);
-        return pageInfo;
-    }
     //ldf 2019-6-20
     @GetMapping("/listLiving")
     public PageInfo<OrderManage> getLivingOrderManage(OrderManage orderManage){

@@ -62,15 +62,6 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
-    //查询入住状态的所有信息 -zyp
-    public List<OrderManage> getOrderManages2(OrderManage orderManage) {
-
-        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
-        OrderManageExample orderManageExample = new OrderManageExample();
-        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
-            criteria.andBookStatusEqualTo(2);
-        return orderManageMapper.selectByExample(orderManageExample);
-    }
 
     @Override
     public List<OrderManage> getAll(OrderManage orderManage) {
