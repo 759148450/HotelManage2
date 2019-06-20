@@ -5,7 +5,7 @@ import java.util.Date;
 public class OrderForm extends MyPage{
     private Integer id;
 
-    private Integer roomId;
+    private String roomId;
 
     private Long roomPrice;
 
@@ -47,12 +47,12 @@ public class OrderForm extends MyPage{
         this.id = id;
     }
 
-    public Integer getRoomId() {
+    public String getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(Integer roomId) {
-        this.roomId = roomId;
+    public void setRoomId(String roomId) {
+        this.roomId = roomId == null ? null : roomId.trim();
     }
 
     public Long getRoomPrice() {

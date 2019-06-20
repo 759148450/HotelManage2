@@ -3,7 +3,7 @@
 <mapper namespace="com.neuedu.dao.OrderFormMapper">
   <resultMap id="BaseResultMap" type="com.neuedu.pojo.OrderForm">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
     <result column="room_price" jdbcType="DECIMAL" property="roomPrice" />
     <result column="deposit" jdbcType="DECIMAL" property="deposit" />
     <result column="lived_days" jdbcType="INTEGER" property="livedDays" />
@@ -122,7 +122,7 @@
       real_wages, odd_change, user, 
       remarks, active, create_date
       )
-    values (#{id,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}, #{roomPrice,jdbcType=DECIMAL}, 
+    values (#{id,jdbcType=INTEGER}, #{roomId,jdbcType=VARCHAR}, #{roomPrice,jdbcType=DECIMAL}, 
       #{deposit,jdbcType=DECIMAL}, #{livedDays,jdbcType=INTEGER}, #{livedPrice,jdbcType=DECIMAL}, 
       #{roomBill,jdbcType=DECIMAL}, #{foodBill,jdbcType=DECIMAL}, #{telBill,jdbcType=DECIMAL}, 
       #{totalBill,jdbcType=DECIMAL}, #{rebackDeposit,jdbcType=DECIMAL}, #{payStyle,jdbcType=VARCHAR}, 
@@ -193,7 +193,7 @@
         #{id,jdbcType=INTEGER},
       </if>
       <if test="roomId != null">
-        #{roomId,jdbcType=INTEGER},
+        #{roomId,jdbcType=VARCHAR},
       </if>
       <if test="roomPrice != null">
         #{roomPrice,jdbcType=DECIMAL},
@@ -258,7 +258,7 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.roomId != null">
-        room_id = #{record.roomId,jdbcType=INTEGER},
+        room_id = #{record.roomId,jdbcType=VARCHAR},
       </if>
       <if test="record.roomPrice != null">
         room_price = #{record.roomPrice,jdbcType=DECIMAL},
@@ -316,7 +316,7 @@
   <update id="updateByExample" parameterType="map">
     update order_form
     set id = #{record.id,jdbcType=INTEGER},
-      room_id = #{record.roomId,jdbcType=INTEGER},
+      room_id = #{record.roomId,jdbcType=VARCHAR},
       room_price = #{record.roomPrice,jdbcType=DECIMAL},
       deposit = #{record.deposit,jdbcType=DECIMAL},
       lived_days = #{record.livedDays,jdbcType=INTEGER},
@@ -341,7 +341,7 @@
     update order_form
     <set>
       <if test="roomId != null">
-        room_id = #{roomId,jdbcType=INTEGER},
+        room_id = #{roomId,jdbcType=VARCHAR},
       </if>
       <if test="roomPrice != null">
         room_price = #{roomPrice,jdbcType=DECIMAL},
@@ -396,7 +396,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.neuedu.pojo.OrderForm">
     update order_form
-    set room_id = #{roomId,jdbcType=INTEGER},
+    set room_id = #{roomId,jdbcType=VARCHAR},
       room_price = #{roomPrice,jdbcType=DECIMAL},
       deposit = #{deposit,jdbcType=DECIMAL},
       lived_days = #{livedDays,jdbcType=INTEGER},

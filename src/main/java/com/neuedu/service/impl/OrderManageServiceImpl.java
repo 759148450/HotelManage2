@@ -68,7 +68,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
         OrderManageExample orderManageExample = new OrderManageExample();
         OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
-            criteria.andBookStatusEqualTo(1);
+            criteria.andBookStatusEqualTo(2);
         return orderManageMapper.selectByExample(orderManageExample);
     }
 

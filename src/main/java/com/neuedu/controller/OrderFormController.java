@@ -22,6 +22,8 @@ public class OrderFormController {
     OrderFormService orderFormService;
     @Resource
     RoomsService roomsService;
+    @Resource
+    OrderManageService orderManageService;
     @GetMapping("/list")
     public PageInfo<OrderForm> getOrderForm(OrderForm orderForm){
         List<OrderForm> orderForms =orderFormService.getOrderForms(orderForm);
@@ -37,9 +39,14 @@ public class OrderFormController {
     public int add(OrderForm orderForm ,OrderManage orderManage){
         /*将客房变为空房状态*/
         Rooms rooms = new Rooms();
-        rooms.setId(orderManage.getOriginalRoomId());
+        rooms.setId(orderManage.getCurrentRoomId());
         rooms.setStatus(0);
         roomsService.update(rooms);
+        //将order_manage状态变为已退房
+        OrderManage orderManage1 = new OrderManage();
+        orderManage1.setId(orderManage.getCurrentRoomId());
+        orderManage1.setBookStatus(3);
+        orderManageService.update(orderManage1);
         //进行结账处理
         return orderFormService.add(orderForm);
     }
