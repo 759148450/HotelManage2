@@ -85,6 +85,10 @@ public class OrderManageController {
     public int update(@Valid OrderManage orderManage ,BindingResult bindingResult){
         return orderManageService.update(orderManage);
     }
+    @GetMapping("/updateBookStutas")
+    public int updateBookStutas(OrderManage orderManage){
+        return orderManageService.update(orderManage);
+    }
     @GetMapping("/getOne")
     public OrderManage getOne(@Valid Integer id){
         return orderManageService.getorderManageById(id);

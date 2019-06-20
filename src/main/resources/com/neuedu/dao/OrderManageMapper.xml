@@ -27,6 +27,8 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="rooms_type_name" jdbcType="VARCHAR" property="roomsTypeName" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="original_room_name" jdbcType="VARCHAR" property="originalRoomName" />
+    <result column="current_room_name" jdbcType="VARCHAR" property="currentRoomName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -90,7 +92,7 @@
     id, original_room_id, current_room_id, book_status, room_type_id, normal_price, discount_price, 
     deposit, residents, credentials_type, credentials_num, phone, arrival_time, leave_time, 
     person_num, user_id, member_id, member_price, breakfast, timed_wakeup, remarks, active, 
-    create_date, rooms_type_name, user_name
+    create_date, rooms_type_name, user_name, original_room_name, current_room_name
   </sql>
   <select id="selectByExample" parameterType="com.neuedu.pojo.OrderManageExample" resultMap="BaseResultMap">
     select
@@ -131,7 +133,8 @@
       user_id, member_id, member_price, 
       breakfast, timed_wakeup, remarks, 
       active, create_date, rooms_type_name, 
-      user_name)
+      user_name, original_room_name, current_room_name
+      )
     values (#{id,jdbcType=INTEGER}, #{originalRoomId,jdbcType=INTEGER}, #{currentRoomId,jdbcType=INTEGER}, 
       #{bookStatus,jdbcType=INTEGER}, #{roomTypeId,jdbcType=INTEGER}, #{normalPrice,jdbcType=DECIMAL}, 
       #{discountPrice,jdbcType=DECIMAL}, #{deposit,jdbcType=DECIMAL}, #{residents,jdbcType=VARCHAR}, 
@@ -140,7 +143,8 @@
       #{userId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{memberPrice,jdbcType=DECIMAL}, 
       #{breakfast,jdbcType=VARCHAR}, #{timedWakeup,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
       #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{roomsTypeName,jdbcType=VARCHAR}, 
-      #{userName,jdbcType=VARCHAR})
+      #{userName,jdbcType=VARCHAR}, #{originalRoomName,jdbcType=VARCHAR}, #{currentRoomName,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.OrderManage">
     insert into order_manage
@@ -220,6 +224,12 @@
       <if test="userName != null">
         user_name,
       </if>
+      <if test="originalRoomName != null">
+        original_room_name,
+      </if>
+      <if test="currentRoomName != null">
+        current_room_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -296,6 +306,12 @@
       </if>
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="originalRoomName != null">
+        #{originalRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRoomName != null">
+        #{currentRoomName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -383,6 +399,12 @@
       <if test="record.userName != null">
         user_name = #{record.userName,jdbcType=VARCHAR},
       </if>
+      <if test="record.originalRoomName != null">
+        original_room_name = #{record.originalRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentRoomName != null">
+        current_room_name = #{record.currentRoomName,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -414,7 +436,9 @@
       active = #{record.active,jdbcType=INTEGER},
       create_date = #{record.createDate,jdbcType=TIMESTAMP},
       rooms_type_name = #{record.roomsTypeName,jdbcType=VARCHAR},
-      user_name = #{record.userName,jdbcType=VARCHAR}
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      original_room_name = #{record.originalRoomName,jdbcType=VARCHAR},
+      current_room_name = #{record.currentRoomName,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -494,6 +518,12 @@
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
+      <if test="originalRoomName != null">
+        original_room_name = #{originalRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRoomName != null">
+        current_room_name = #{currentRoomName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -522,7 +552,9 @@
       active = #{active,jdbcType=INTEGER},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       rooms_type_name = #{roomsTypeName,jdbcType=VARCHAR},
-      user_name = #{userName,jdbcType=VARCHAR}
+      user_name = #{userName,jdbcType=VARCHAR},
+      original_room_name = #{originalRoomName,jdbcType=VARCHAR},
+      current_room_name = #{currentRoomName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

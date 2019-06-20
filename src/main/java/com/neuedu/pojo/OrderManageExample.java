@@ -1685,6 +1685,146 @@ public class OrderManageExample {
             addCriterion("user_name not between", value1, value2, "userName");
             return (Criteria) this;
         }
+
+        public Criteria andOriginalRoomNameIsNull() {
+            addCriterion("original_room_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameIsNotNull() {
+            addCriterion("original_room_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameEqualTo(String value) {
+            addCriterion("original_room_name =", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameNotEqualTo(String value) {
+            addCriterion("original_room_name <>", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameGreaterThan(String value) {
+            addCriterion("original_room_name >", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameGreaterThanOrEqualTo(String value) {
+            addCriterion("original_room_name >=", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameLessThan(String value) {
+            addCriterion("original_room_name <", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameLessThanOrEqualTo(String value) {
+            addCriterion("original_room_name <=", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameLike(String value) {
+            addCriterion("original_room_name like", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameNotLike(String value) {
+            addCriterion("original_room_name not like", value, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameIn(List<String> values) {
+            addCriterion("original_room_name in", values, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameNotIn(List<String> values) {
+            addCriterion("original_room_name not in", values, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameBetween(String value1, String value2) {
+            addCriterion("original_room_name between", value1, value2, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOriginalRoomNameNotBetween(String value1, String value2) {
+            addCriterion("original_room_name not between", value1, value2, "originalRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameIsNull() {
+            addCriterion("current_room_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameIsNotNull() {
+            addCriterion("current_room_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameEqualTo(String value) {
+            addCriterion("current_room_name =", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameNotEqualTo(String value) {
+            addCriterion("current_room_name <>", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameGreaterThan(String value) {
+            addCriterion("current_room_name >", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameGreaterThanOrEqualTo(String value) {
+            addCriterion("current_room_name >=", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameLessThan(String value) {
+            addCriterion("current_room_name <", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameLessThanOrEqualTo(String value) {
+            addCriterion("current_room_name <=", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameLike(String value) {
+            addCriterion("current_room_name like", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameNotLike(String value) {
+            addCriterion("current_room_name not like", value, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameIn(List<String> values) {
+            addCriterion("current_room_name in", values, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameNotIn(List<String> values) {
+            addCriterion("current_room_name not in", values, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameBetween(String value1, String value2) {
+            addCriterion("current_room_name between", value1, value2, "currentRoomName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCurrentRoomNameNotBetween(String value1, String value2) {
+            addCriterion("current_room_name not between", value1, value2, "currentRoomName");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

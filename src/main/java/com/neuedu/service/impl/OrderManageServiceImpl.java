@@ -32,9 +32,13 @@ public class OrderManageServiceImpl implements OrderManageService {
             criteria.andCurrentRoomIdEqualTo(orderManage.getCurrentRoomId()).andActiveEqualTo(1);
 //            criteria.andIdEqualTo(orderManage.getCurrentRoomId()).andActiveEqualTo(1);
         }
-        /*根据原来房间编号查询*/
-        if (orderManage.getOriginalRoomId()!=null){
-            criteria.andOriginalRoomIdEqualTo(orderManage.getOriginalRoomId()).andActiveEqualTo(1);
+//        /*根据原来房间编号查询*/
+//        if (orderManage.getOriginalRoomId()!=null){
+//            criteria.andOriginalRoomIdEqualTo(orderManage.getOriginalRoomId()).andActiveEqualTo(1);
+//        }
+        /*根据现在房间号模糊查询*/
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())){
+            criteria.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1);
         }
         /*根据预定状态查询信息*/
         if(orderManage.getBookStatus()!=null){

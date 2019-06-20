@@ -3,10 +3,10 @@ package com.neuedu.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OrderManage extends MyPage{
+public class OrderManage extends  MyPage{
     private Integer id;
 
-    private Integer originalRoomId;
+    private Integer originalRoomId;//房间id
 
     private Integer currentRoomId;
 
@@ -36,7 +36,7 @@ public class OrderManage extends MyPage{
 
     private Integer userId;
 
-    private Integer memberId;
+    private Integer memberId;//会员编号
 
     private BigDecimal memberPrice;
 
@@ -50,9 +50,13 @@ public class OrderManage extends MyPage{
 
     private Date createDate;
 
-    private String roomsTypeName;
+    private String roomsTypeName;//类型名
 
     private String userName;
+
+    private String originalRoomName;//房间号-roomId
+
+    private String currentRoomName;
 
     public Integer getId() {
         return id;
@@ -252,5 +256,21 @@ public class OrderManage extends MyPage{
 
     public void setUserName(String userName) {
         this.userName = userName == null ? null : userName.trim();
+    }
+
+    public String getOriginalRoomName() {
+        return originalRoomName;
+    }
+
+    public void setOriginalRoomName(String originalRoomName) {
+        this.originalRoomName = originalRoomName == null ? null : originalRoomName.trim();
+    }
+
+    public String getCurrentRoomName() {
+        return currentRoomName;
+    }
+
+    public void setCurrentRoomName(String currentRoomName) {
+        this.currentRoomName = currentRoomName == null ? null : currentRoomName.trim();
     }
 }

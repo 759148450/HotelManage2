@@ -36,7 +36,7 @@ public class OrderFormController {
         return orderFormService.getAll(orderForm);
     }
     @PostMapping("/add")
-    public int add(OrderForm orderForm ,OrderManage orderManage){
+    public int add(OrderForm orderForm , OrderManage orderManage){
         /*将客房变为空房状态*/
         Rooms rooms = new Rooms();
         rooms.setId(orderManage.getCurrentRoomId());
