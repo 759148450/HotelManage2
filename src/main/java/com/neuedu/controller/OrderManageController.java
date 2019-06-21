@@ -76,6 +76,19 @@ public class OrderManageController {
 //        orderManage.setActive(1);
         return orderManageService.getAll(orderManage);
     }
+
+    /**
+     *     入住信息：将客房变为已预定状态
+     */
+    @PostMapping("/addTo")
+    public int addTo(OrderManage orderManage){
+        Rooms rooms = new Rooms();
+        rooms.setId(orderManage.getOriginalRoomId());
+        rooms.setStatus(1);
+        roomsService.update(rooms);
+        return orderManageService.add(orderManage);
+    }
+
     @PostMapping("/add")
     public int add(OrderManage orderManage){
         /*将客房变为已预定状态*/

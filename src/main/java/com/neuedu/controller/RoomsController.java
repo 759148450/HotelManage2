@@ -42,6 +42,7 @@ public class RoomsController {
     public List<Rooms> getAll(Rooms rooms){
         return roomsService.getAll(rooms);
     }
+
     @PostMapping("/add")
     public int add(Rooms rooms){
         return roomsService.add(rooms);
@@ -58,6 +59,13 @@ public class RoomsController {
     @GetMapping("/getOne")
     public Rooms getOne(Integer id){
         return roomsService.getroomsById(id);
+    }
+
+    //查询所有未预定的房间
+    @GetMapping("/getUsefulAll")
+    public List<Rooms> getUsefulAll(Rooms rooms){
+        rooms.setStatus(0);
+        return roomsService.getAll(rooms);
     }
 
     /*查询相关联的所有楼层信息*/

@@ -54,6 +54,10 @@ public class RoomsServiceImpl implements RoomsService {
     @Override
     public List<Rooms> getAll(Rooms rooms) {
         RoomsExample roomsExample = new RoomsExample();
+        RoomsExample.Criteria criteria = roomsExample.createCriteria();
+        if (rooms.getStatus()!=null){
+            criteria.andStatusEqualTo(rooms.getStatus()).andActiveEqualTo(1);
+        }
         return roomsMapper.selectByExample(roomsExample);
     }
 
