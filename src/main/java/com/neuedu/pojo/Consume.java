@@ -3,10 +3,12 @@ package com.neuedu.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Consume extends MyPage {
+public class Consume extends MyPage{
     private Integer id;
 
-    private Integer roomId;
+    private Integer liveId;
+
+    private String roomId;
 
     private Integer goodTypeid;
 
@@ -48,12 +50,20 @@ public class Consume extends MyPage {
         this.id = id;
     }
 
-    public Integer getRoomId() {
+    public Integer getLiveId() {
+        return liveId;
+    }
+
+    public void setLiveId(Integer liveId) {
+        this.liveId = liveId;
+    }
+
+    public String getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(Integer roomId) {
-        this.roomId = roomId;
+    public void setRoomId(String roomId) {
+        this.roomId = roomId == null ? null : roomId.trim();
     }
 
     public Integer getGoodTypeid() {
@@ -168,19 +178,19 @@ public class Consume extends MyPage {
         this.createDate = createDate;
     }
 
-    public Goods getGoods() {
-        return goods;
-    }
-
-    public void setGoods(Goods goods) {
-        this.goods = goods;
-    }
-
     public GoodsType getGoodsType() {
         return goodsType;
     }
 
     public void setGoodsType(GoodsType goodsType) {
         this.goodsType = goodsType;
+    }
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
     }
 }

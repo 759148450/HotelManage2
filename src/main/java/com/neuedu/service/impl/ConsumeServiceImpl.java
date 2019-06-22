@@ -5,6 +5,7 @@ import com.neuedu.dao.ConsumeMapper;
 import com.neuedu.pojo.Consume;
 import com.neuedu.pojo.ConsumeExample;
 import com.neuedu.service.ConsumeService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,9 +26,11 @@ public class ConsumeServiceImpl implements ConsumeService {
             criteria.andGoodIdEqualTo(consume.getGoodId()).andActiveEqualTo(1);
         }if(consume.getGoodTypeid()!=null){
             criteria.andGoodTypeidEqualTo(consume.getGoodTypeid()).andActiveEqualTo(1);
+        }if(consume.getLiveId()!=null){
+            criteria.andLiveIdEqualTo(consume.getLiveId()).andActiveEqualTo(1);
         }
-        if (consume.getRoomId()!=null) {
-            criteria.andRoomIdEqualTo(consume.getRoomId()).andActiveEqualTo(1);
+        if (StringUtils.isNotBlank(consume.getRoomId())) {
+            criteria.andRoomIdLike("%"+consume.getRoomId()+"%").andActiveEqualTo(1);
         }
         else {
             criteria.andActiveEqualTo(1);

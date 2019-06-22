@@ -3,7 +3,8 @@
 <mapper namespace="com.neuedu.dao.ConsumeMapper">
   <resultMap id="BaseResultMap" type="com.neuedu.pojo.Consume">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+    <result column="live_id" jdbcType="INTEGER" property="liveId" />
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
     <result column="good_typeid" jdbcType="INTEGER" property="goodTypeid" />
     <result column="good_id" jdbcType="INTEGER" property="goodId" />
     <result column="good_name" jdbcType="VARCHAR" property="goodName" />
@@ -20,6 +21,7 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <association  property="goodsType" column="good_typeid" select="com.neuedu.dao.GoodsTypeMapper.selectByPrimaryKey"></association>
     <association  property="goods" column="good_id" select="com.neuedu.dao.GoodsMapper.selectByPrimaryKey"></association>
+
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -80,8 +82,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, room_id, good_typeid, good_id, good_name, num, price, consume_price, discount, 
-    dc_price, total_price, user, consume_time, remarks, active, create_date
+    id, live_id, room_id, good_typeid, good_id, good_name, num, price, consume_price, 
+    discount, dc_price, total_price, user, consume_time, remarks, active, create_date
   </sql>
   <select id="selectByExample" parameterType="com.neuedu.pojo.ConsumeExample" resultMap="BaseResultMap">
     select
@@ -114,24 +116,27 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.neuedu.pojo.Consume">
-    insert into consume (id, room_id, good_typeid, 
-      good_id, good_name, num, 
-      price, consume_price, discount, 
-      dc_price, total_price, user, 
-      consume_time, remarks, active, 
-      create_date)
-    values (#{id,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}, #{goodTypeid,jdbcType=INTEGER}, 
-      #{goodId,jdbcType=INTEGER}, #{goodName,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, 
-      #{price,jdbcType=DECIMAL}, #{consumePrice,jdbcType=DECIMAL}, #{discount,jdbcType=INTEGER}, 
-      #{dcPrice,jdbcType=DECIMAL}, #{totalPrice,jdbcType=DECIMAL}, #{user,jdbcType=VARCHAR}, 
-      #{consumeTime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, #{active,jdbcType=INTEGER}, 
-      #{createDate,jdbcType=TIMESTAMP})
+    insert into consume (id, live_id, room_id, 
+      good_typeid, good_id, good_name, 
+      num, price, consume_price, 
+      discount, dc_price, total_price, 
+      user, consume_time, remarks, 
+      active, create_date)
+    values (#{id,jdbcType=INTEGER}, #{liveId,jdbcType=INTEGER}, #{roomId,jdbcType=VARCHAR}, 
+      #{goodTypeid,jdbcType=INTEGER}, #{goodId,jdbcType=INTEGER}, #{goodName,jdbcType=VARCHAR}, 
+      #{num,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{consumePrice,jdbcType=DECIMAL}, 
+      #{discount,jdbcType=INTEGER}, #{dcPrice,jdbcType=DECIMAL}, #{totalPrice,jdbcType=DECIMAL}, 
+      #{user,jdbcType=VARCHAR}, #{consumeTime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
+      #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.Consume">
     insert into consume
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="liveId != null">
+        live_id,
       </if>
       <if test="roomId != null">
         room_id,
@@ -183,8 +188,11 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
+      <if test="liveId != null">
+        #{liveId,jdbcType=INTEGER},
+      </if>
       <if test="roomId != null">
-        #{roomId,jdbcType=INTEGER},
+        #{roomId,jdbcType=VARCHAR},
       </if>
       <if test="goodTypeid != null">
         #{goodTypeid,jdbcType=INTEGER},
@@ -242,8 +250,11 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
+      <if test="record.liveId != null">
+        live_id = #{record.liveId,jdbcType=INTEGER},
+      </if>
       <if test="record.roomId != null">
-        room_id = #{record.roomId,jdbcType=INTEGER},
+        room_id = #{record.roomId,jdbcType=VARCHAR},
       </if>
       <if test="record.goodTypeid != null">
         good_typeid = #{record.goodTypeid,jdbcType=INTEGER},
@@ -295,7 +306,8 @@
   <update id="updateByExample" parameterType="map">
     update consume
     set id = #{record.id,jdbcType=INTEGER},
-      room_id = #{record.roomId,jdbcType=INTEGER},
+      live_id = #{record.liveId,jdbcType=INTEGER},
+      room_id = #{record.roomId,jdbcType=VARCHAR},
       good_typeid = #{record.goodTypeid,jdbcType=INTEGER},
       good_id = #{record.goodId,jdbcType=INTEGER},
       good_name = #{record.goodName,jdbcType=VARCHAR},
@@ -317,8 +329,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.pojo.Consume">
     update consume
     <set>
+      <if test="liveId != null">
+        live_id = #{liveId,jdbcType=INTEGER},
+      </if>
       <if test="roomId != null">
-        room_id = #{roomId,jdbcType=INTEGER},
+        room_id = #{roomId,jdbcType=VARCHAR},
       </if>
       <if test="goodTypeid != null">
         good_typeid = #{goodTypeid,jdbcType=INTEGER},
@@ -367,7 +382,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.neuedu.pojo.Consume">
     update consume
-    set room_id = #{roomId,jdbcType=INTEGER},
+    set live_id = #{liveId,jdbcType=INTEGER},
+      room_id = #{roomId,jdbcType=VARCHAR},
       good_typeid = #{goodTypeid,jdbcType=INTEGER},
       good_id = #{goodId,jdbcType=INTEGER},
       good_name = #{goodName,jdbcType=VARCHAR},

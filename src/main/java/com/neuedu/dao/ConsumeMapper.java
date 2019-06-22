@@ -2,9 +2,8 @@ package com.neuedu.dao;
 
 import com.neuedu.pojo.Consume;
 import com.neuedu.pojo.ConsumeExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface ConsumeMapper {
     long countByExample(ConsumeExample example);
