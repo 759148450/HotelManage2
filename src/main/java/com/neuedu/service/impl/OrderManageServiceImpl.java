@@ -113,6 +113,41 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
+    //ZYP 查询已预订、已入住和已退房状态的房间
+    @Override
+    public List<OrderManage> getOrderManages3(OrderManage orderManage) {
+
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+
+        criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+    //ZYP 查询已预订、已取消状态的房间
+    @Override
+    public List<OrderManage> getOrderManages4(OrderManage orderManage) {
+
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+        OrderManageExample.Criteria criteria2 = orderManageExample.createCriteria();
+
+        /*根据现在房间号模糊查询*/
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())){
+            criteria.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+        } else{
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+        }
+
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
 
 
     @Override

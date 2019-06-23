@@ -46,6 +46,20 @@ public class OrderManageController {
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
+    //ZYP 查询已预订、已入住和已退房状态的房间
+    @GetMapping("/financial")
+    public PageInfo<OrderManage> getOrderManage3(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.getOrderManages3(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
+    //ZYP 查询已预订、已取消状态的房间
+    @GetMapping("/OrderAndCanacel")
+    public PageInfo<OrderManage> getOrderManage4(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.getOrderManages4(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
 
     //ldf 2019-6-20
     @GetMapping("/listLiving")
