@@ -153,6 +153,10 @@ public class OrderManageController {
         map.put("leaguers", leaguerService.getAll(leaguer));
         return map;
     }
+    @GetMapping("/updatetimedWakeup")
+    public int updatetimedWakeup(OrderManage orderManage){
+        return orderManageService.update(orderManage);
+    }
 //    /*查询所有的房间*/
 //    @GetMapping("/getAllRooms")
 //    public List<Rooms> getAll(Rooms rooms){
