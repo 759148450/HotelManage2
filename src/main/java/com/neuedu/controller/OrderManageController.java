@@ -51,7 +51,7 @@ public class OrderManageController {
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
-    //ZYP 查询已预订、已入住和已换房、已退房状态的房间0、2、4、3
+    //ZYP 查询已预订、已入住和已换房状态的房间非1
     @GetMapping("/financial")
     public PageInfo<OrderManage> getOrderManage3(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getOrderManages3(orderManage);
@@ -73,20 +73,6 @@ public class OrderManageController {
         List<OrderManage> orderManages =orderManageService.getOrderManages(orderManage);
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
-    }
-    @PostMapping("/change")
-    public int change(@Valid OrderManage orderManage ,BindingResult bindingResult){
-        Integer orgRoomId=orderManage.getOriginalRoomId();
-        Integer curRoomId=orderManage.getCurrentRoomId();
-        orderManage.setOriginalRoomId(null);
-        orderManage.setCurrentRoomId(orgRoomId);
-        orderManage.setActive(0);
-        orderManageService.update(orderManage);//删除原来的订单表
-        orderManage.setOriginalRoomId(orgRoomId);
-        orderManage.setCurrentRoomId(curRoomId);
-        orderManage.setId(null);
-        orderManage.setActive(1);
-        return orderManageService.add(orderManage);//创建新订单表
     }
     //-----end----------
 
@@ -181,6 +167,25 @@ public class OrderManageController {
 ////        goodsType.setActive(1);
 //        return leaguerService.getAll(leaguers);
 //    }
+    @PostMapping("/change")
+    public int change(@Valid OrderManage orderManage ,BindingResult bindingResult){
 
+        Rooms rooms1 = new Rooms();
+        rooms1.setId(orderManage.getOriginalRoomId());
+        rooms1.setStatus(0);
+        roomsService.update(rooms1);
+
+        Rooms rooms2 = new Rooms();
+        rooms2.setId(orderManage.getCurrentRoomId());
+        rooms2.setStatus(2);
+        roomsService.update(rooms2);
+
+        String orgRoomName=orderManage.getOriginalRoomName();
+        String curRoomName=orderManage.getCurrentRoomName();
+        orderManage.setOriginalRoomName(orgRoomName);
+        orderManage.setCurrentRoomName(curRoomName);
+        orderManage.setBookStatus(4);
+        return orderManageService.update(orderManage);
+    }
 }
 
