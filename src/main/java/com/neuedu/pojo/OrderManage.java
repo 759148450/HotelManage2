@@ -58,6 +58,8 @@ public class OrderManage extends MyPage{
 
     private String currentRoomName;
 
+    private OrderForm orderForm;
+
     public Integer getId() {
         return id;
     }
@@ -272,5 +274,13 @@ public class OrderManage extends MyPage{
 
     public void setCurrentRoomName(String currentRoomName) {
         this.currentRoomName = currentRoomName == null ? null : currentRoomName.trim();
+    }
+
+    public OrderForm getOrderForm() {
+        return orderForm;
+    }
+
+    public void setOrderForm(OrderForm orderForm) {
+        this.orderForm = orderForm;
     }
 }

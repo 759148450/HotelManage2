@@ -72,7 +72,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
-    //ZYP 查询已入住和已退房状态的房间
+    //ZYP 查询已入住2和已换房4状态的房间
     @Override
     public List<OrderManage> getLivedOrderManages(OrderManage orderManage) {
 
@@ -113,7 +113,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
-    //ZYP 查询已预订、已入住和已退房状态的房间
+    //ZYP 查询已预订0、已入住2和已换房4、已退房3状态的房间
     @Override
     public List<OrderManage> getOrderManages3(OrderManage orderManage) {
 

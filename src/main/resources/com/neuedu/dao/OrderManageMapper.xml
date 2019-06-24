@@ -29,6 +29,7 @@
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="original_room_name" jdbcType="VARCHAR" property="originalRoomName" />
     <result column="current_room_name" jdbcType="VARCHAR" property="currentRoomName" />
+    <association  property="orderForm" column="id" select="com.neuedu.dao.OrderFormMapper.selectByPrimaryKey"></association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>

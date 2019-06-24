@@ -2,9 +2,11 @@ package com.neuedu.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.Leaguer;
+import com.neuedu.pojo.OrderForm;
 import com.neuedu.pojo.OrderManage;
 import com.neuedu.pojo.Rooms;
 import com.neuedu.service.LeaguerService;
+import com.neuedu.service.OrderFormService;
 import com.neuedu.service.OrderManageService;
 import com.neuedu.service.RoomsService;
 import org.springframework.validation.BindingResult;
@@ -31,6 +33,9 @@ public class OrderManageController {
     RoomsService roomsService;
     @Resource
     LeaguerService leaguerService;
+      //    关联orderForm用来查询结账信息
+    @Resource
+    OrderFormService orderFormService;
 
     @GetMapping("/list")
     public PageInfo<OrderManage> getOrderManage(OrderManage orderManage){
@@ -39,14 +44,14 @@ public class OrderManageController {
         return pageInfo;
     }
 
-    //ZYP 查询已入住和已退房状态的房间2、4
+    //ZYP 查询已入住和已换房状态的房间2、4
     @GetMapping("/listLived")
     public PageInfo<OrderManage> getLivedOrderManage(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getLivedOrderManages(orderManage);
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
-    //ZYP 查询已预订、已入住和已退房状态的房间0、2、4
+    //ZYP 查询已预订、已入住和已换房、已退房状态的房间0、2、4、3
     @GetMapping("/financial")
     public PageInfo<OrderManage> getOrderManage3(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getOrderManages3(orderManage);
@@ -156,6 +161,13 @@ public class OrderManageController {
     @GetMapping("/updatetimedWakeup")
     public int updatetimedWakeup(OrderManage orderManage){
         return orderManageService.update(orderManage);
+    }
+
+
+    /*查询相关联的所有账单*/
+    @GetMapping("/orderForm")
+    public List<OrderForm> getAll(OrderForm orderForm){
+        return orderFormService.getAll(orderForm);
     }
 //    /*查询所有的房间*/
 //    @GetMapping("/getAllRooms")
