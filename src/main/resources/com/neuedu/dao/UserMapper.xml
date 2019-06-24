@@ -244,6 +244,6 @@
     select
     <include refid="Base_Column_List" />
     from user
-    WHERE user_name = #{userName} and user_pwd = #{userPwd}
+    WHERE user_name = #{userName} and user_pwd = #{userPwd} and active=1
   </select>
 </mapper>
