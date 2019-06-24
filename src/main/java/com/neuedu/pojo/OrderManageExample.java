@@ -1306,52 +1306,62 @@ public class OrderManageExample {
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupEqualTo(Date value) {
+        public Criteria andTimedWakeupEqualTo(String value) {
             addCriterion("timed_wakeup =", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupNotEqualTo(Date value) {
+        public Criteria andTimedWakeupNotEqualTo(String value) {
             addCriterion("timed_wakeup <>", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupGreaterThan(Date value) {
+        public Criteria andTimedWakeupGreaterThan(String value) {
             addCriterion("timed_wakeup >", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupGreaterThanOrEqualTo(Date value) {
+        public Criteria andTimedWakeupGreaterThanOrEqualTo(String value) {
             addCriterion("timed_wakeup >=", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupLessThan(Date value) {
+        public Criteria andTimedWakeupLessThan(String value) {
             addCriterion("timed_wakeup <", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupLessThanOrEqualTo(Date value) {
+        public Criteria andTimedWakeupLessThanOrEqualTo(String value) {
             addCriterion("timed_wakeup <=", value, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupIn(List<Date> values) {
+        public Criteria andTimedWakeupLike(String value) {
+            addCriterion("timed_wakeup like", value, "timedWakeup");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimedWakeupNotLike(String value) {
+            addCriterion("timed_wakeup not like", value, "timedWakeup");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimedWakeupIn(List<String> values) {
             addCriterion("timed_wakeup in", values, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupNotIn(List<Date> values) {
+        public Criteria andTimedWakeupNotIn(List<String> values) {
             addCriterion("timed_wakeup not in", values, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupBetween(Date value1, Date value2) {
+        public Criteria andTimedWakeupBetween(String value1, String value2) {
             addCriterion("timed_wakeup between", value1, value2, "timedWakeup");
             return (Criteria) this;
         }
 
-        public Criteria andTimedWakeupNotBetween(Date value1, Date value2) {
+        public Criteria andTimedWakeupNotBetween(String value1, String value2) {
             addCriterion("timed_wakeup not between", value1, value2, "timedWakeup");
             return (Criteria) this;
         }

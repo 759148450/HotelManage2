@@ -21,7 +21,7 @@
     <result column="member_id" jdbcType="INTEGER" property="memberId" />
     <result column="member_price" jdbcType="DECIMAL" property="memberPrice" />
     <result column="breakfast" jdbcType="VARCHAR" property="breakfast" />
-    <result column="timed_wakeup" jdbcType="TIMESTAMP" property="timedWakeup" />
+    <result column="timed_wakeup" jdbcType="VARCHAR" property="timedWakeup" />
     <result column="remarks" jdbcType="VARCHAR" property="remarks" />
     <result column="active" jdbcType="INTEGER" property="active" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
@@ -141,7 +141,7 @@
       #{credentialsType,jdbcType=VARCHAR}, #{credentialsNum,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{arrivalTime,jdbcType=TIMESTAMP}, #{leaveTime,jdbcType=TIMESTAMP}, #{personNum,jdbcType=INTEGER}, 
       #{userId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{memberPrice,jdbcType=DECIMAL}, 
-      #{breakfast,jdbcType=VARCHAR}, #{timedWakeup,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
+      #{breakfast,jdbcType=VARCHAR}, #{timedWakeup,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
       #{active,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{roomsTypeName,jdbcType=VARCHAR}, 
       #{userName,jdbcType=VARCHAR}, #{originalRoomName,jdbcType=VARCHAR}, #{currentRoomName,jdbcType=VARCHAR}
       )
@@ -290,7 +290,7 @@
         #{breakfast,jdbcType=VARCHAR},
       </if>
       <if test="timedWakeup != null">
-        #{timedWakeup,jdbcType=TIMESTAMP},
+        #{timedWakeup,jdbcType=VARCHAR},
       </if>
       <if test="remarks != null">
         #{remarks,jdbcType=VARCHAR},
@@ -382,7 +382,7 @@
         breakfast = #{record.breakfast,jdbcType=VARCHAR},
       </if>
       <if test="record.timedWakeup != null">
-        timed_wakeup = #{record.timedWakeup,jdbcType=TIMESTAMP},
+        timed_wakeup = #{record.timedWakeup,jdbcType=VARCHAR},
       </if>
       <if test="record.remarks != null">
         remarks = #{record.remarks,jdbcType=VARCHAR},
@@ -431,7 +431,7 @@
       member_id = #{record.memberId,jdbcType=INTEGER},
       member_price = #{record.memberPrice,jdbcType=DECIMAL},
       breakfast = #{record.breakfast,jdbcType=VARCHAR},
-      timed_wakeup = #{record.timedWakeup,jdbcType=TIMESTAMP},
+      timed_wakeup = #{record.timedWakeup,jdbcType=VARCHAR},
       remarks = #{record.remarks,jdbcType=VARCHAR},
       active = #{record.active,jdbcType=INTEGER},
       create_date = #{record.createDate,jdbcType=TIMESTAMP},
@@ -501,7 +501,7 @@
         breakfast = #{breakfast,jdbcType=VARCHAR},
       </if>
       <if test="timedWakeup != null">
-        timed_wakeup = #{timedWakeup,jdbcType=TIMESTAMP},
+        timed_wakeup = #{timedWakeup,jdbcType=VARCHAR},
       </if>
       <if test="remarks != null">
         remarks = #{remarks,jdbcType=VARCHAR},
@@ -547,7 +547,7 @@
       member_id = #{memberId,jdbcType=INTEGER},
       member_price = #{memberPrice,jdbcType=DECIMAL},
       breakfast = #{breakfast,jdbcType=VARCHAR},
-      timed_wakeup = #{timedWakeup,jdbcType=TIMESTAMP},
+      timed_wakeup = #{timedWakeup,jdbcType=VARCHAR},
       remarks = #{remarks,jdbcType=VARCHAR},
       active = #{active,jdbcType=INTEGER},
       create_date = #{createDate,jdbcType=TIMESTAMP},

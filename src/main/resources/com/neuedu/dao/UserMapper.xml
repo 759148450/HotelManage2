@@ -240,4 +240,10 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByUserNameAndUserPwd" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    WHERE user_name = #{userName} and user_pwd = #{userPwd}
+  </select>
 </mapper>

@@ -3,10 +3,10 @@ package com.neuedu.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OrderManage extends  MyPage{
+public class OrderManage extends MyPage{
     private Integer id;
 
-    private Integer originalRoomId;//房间id
+    private Integer originalRoomId;
 
     private Integer currentRoomId;
 
@@ -36,13 +36,13 @@ public class OrderManage extends  MyPage{
 
     private Integer userId;
 
-    private Integer memberId;//会员编号
+    private Integer memberId;
 
     private BigDecimal memberPrice;
 
     private String breakfast;
 
-    private Date timedWakeup;
+    private String timedWakeup;
 
     private String remarks;
 
@@ -50,11 +50,11 @@ public class OrderManage extends  MyPage{
 
     private Date createDate;
 
-    private String roomsTypeName;//类型名
+    private String roomsTypeName;
 
     private String userName;
 
-    private String originalRoomName;//房间号-roomId
+    private String originalRoomName;
 
     private String currentRoomName;
 
@@ -210,12 +210,12 @@ public class OrderManage extends  MyPage{
         this.breakfast = breakfast == null ? null : breakfast.trim();
     }
 
-    public Date getTimedWakeup() {
+    public String getTimedWakeup() {
         return timedWakeup;
     }
 
-    public void setTimedWakeup(Date timedWakeup) {
-        this.timedWakeup = timedWakeup;
+    public void setTimedWakeup(String timedWakeup) {
+        this.timedWakeup = timedWakeup == null ? null : timedWakeup.trim();
     }
 
     public String getRemarks() {

@@ -39,21 +39,21 @@ public class OrderManageController {
         return pageInfo;
     }
 
-    //ZYP 查询已入住和已退房状态的房间
+    //ZYP 查询已入住和已退房状态的房间2、4
     @GetMapping("/listLived")
     public PageInfo<OrderManage> getLivedOrderManage(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getLivedOrderManages(orderManage);
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
-    //ZYP 查询已预订、已入住和已退房状态的房间
+    //ZYP 查询已预订、已入住和已退房状态的房间0、2、4
     @GetMapping("/financial")
     public PageInfo<OrderManage> getOrderManage3(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getOrderManages3(orderManage);
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
     }
-    //ZYP 查询已预订、已取消状态的房间
+    //ZYP 查询已预订0、已取消1状态的房间
     @GetMapping("/OrderAndCanacel")
     public PageInfo<OrderManage> getOrderManage4(OrderManage orderManage){
         List<OrderManage> orderManages =orderManageService.getOrderManages4(orderManage);
@@ -61,7 +61,7 @@ public class OrderManageController {
         return pageInfo;
     }
 
-    //ldf 2019-6-20
+    //ldf 2019-6-20 2状态
     @GetMapping("/listLiving")
     public PageInfo<OrderManage> getLivingOrderManage(OrderManage orderManage){
         orderManage.setBookStatus(2);
@@ -121,6 +121,7 @@ public class OrderManageController {
     public int update(@Valid OrderManage orderManage ,BindingResult bindingResult){
         return orderManageService.update(orderManage);
     }
+    //修改房间状态和订单状态
     @GetMapping("/updateBookStutas")
     public int updateBookStutas(OrderManage orderManage){
         System.out.println("房间状态"+orderManage.getBookStatus());

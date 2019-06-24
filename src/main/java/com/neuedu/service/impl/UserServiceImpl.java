@@ -61,4 +61,9 @@ public class UserServiceImpl implements UserService {
     public int update(User user) {
         return userMapper.updateByPrimaryKeySelective(user);
     }
+
+    @Override
+    public User getUserByNameAndUserPwd(String userName, String userPwd) {
+        return userMapper.selectByUserNameAndUserPwd(userName,userPwd);
+    }
 }

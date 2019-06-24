@@ -18,7 +18,6 @@ public class OrderFormServiceImpl implements OrderFormService {
     OrderFormMapper orderFormMapper;
     @Override
     public List<OrderForm> getOrderForms(OrderForm orderForm) {
-
         PageHelper.startPage(orderForm.getPageNo(), orderForm.getPageSize());
         OrderFormExample orderFormExample = new OrderFormExample();
         OrderFormExample.Criteria criteria = orderFormExample.createCriteria();
@@ -30,17 +29,13 @@ public class OrderFormServiceImpl implements OrderFormService {
         }else {
             criteria.andActiveEqualTo(1);
         }
-
         return orderFormMapper.selectByExample(orderFormExample);
     }
-
-
     @Override
     public List<OrderForm> getAll(OrderForm orderForm) {
         OrderFormExample orderFormExample = new OrderFormExample();
         return orderFormMapper.selectByExample(orderFormExample);
     }
-
     @Override
     public OrderForm getorderFormById(int id) {
         return orderFormMapper.selectByPrimaryKey(id);

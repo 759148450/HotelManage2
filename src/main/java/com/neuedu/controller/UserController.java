@@ -3,6 +3,7 @@ package com.neuedu.controller;
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.User;
 import com.neuedu.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,10 @@ public class UserController {
     @PostMapping("/update")
     public int update(User user){
         return userService.update(user);
+    }
+    @PostMapping("/login")
+    public User login(@Param("userName") String userName,@Param("userPwd") String userPwd){
+        return userService.getUserByNameAndUserPwd(userName,userPwd);
     }
     @GetMapping("/getOne")
     public User getOne(Integer id){

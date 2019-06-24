@@ -11,4 +11,6 @@ public interface UserService {
     int add(User user);
     int del(User user);
     int update(User user);
+
+    User getUserByNameAndUserPwd(String userName,String userPwd);
 }
