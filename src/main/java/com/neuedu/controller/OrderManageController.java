@@ -88,8 +88,8 @@ public class OrderManageController {
     @PostMapping("/addTo")
     public int addTo(OrderManage orderManage){
         Rooms rooms = new Rooms();
-        rooms.setId(orderManage.getOriginalRoomId());
-        rooms.setStatus(1);
+        rooms.setId(orderManage.getCurrentRoomId());
+        rooms.setStatus(2);
         roomsService.update(rooms);
         return orderManageService.add(orderManage);
     }
