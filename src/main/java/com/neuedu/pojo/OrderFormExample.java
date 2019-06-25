@@ -1,5 +1,6 @@
 package com.neuedu.pojo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -245,52 +246,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceEqualTo(Long value) {
+        public Criteria andRoomPriceEqualTo(BigDecimal value) {
             addCriterion("room_price =", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceNotEqualTo(Long value) {
+        public Criteria andRoomPriceNotEqualTo(BigDecimal value) {
             addCriterion("room_price <>", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceGreaterThan(Long value) {
+        public Criteria andRoomPriceGreaterThan(BigDecimal value) {
             addCriterion("room_price >", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceGreaterThanOrEqualTo(Long value) {
+        public Criteria andRoomPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("room_price >=", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceLessThan(Long value) {
+        public Criteria andRoomPriceLessThan(BigDecimal value) {
             addCriterion("room_price <", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceLessThanOrEqualTo(Long value) {
+        public Criteria andRoomPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("room_price <=", value, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceIn(List<Long> values) {
+        public Criteria andRoomPriceIn(List<BigDecimal> values) {
             addCriterion("room_price in", values, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceNotIn(List<Long> values) {
+        public Criteria andRoomPriceNotIn(List<BigDecimal> values) {
             addCriterion("room_price not in", values, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceBetween(Long value1, Long value2) {
+        public Criteria andRoomPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("room_price between", value1, value2, "roomPrice");
             return (Criteria) this;
         }
 
-        public Criteria andRoomPriceNotBetween(Long value1, Long value2) {
+        public Criteria andRoomPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("room_price not between", value1, value2, "roomPrice");
             return (Criteria) this;
         }
@@ -305,52 +306,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andDepositEqualTo(Long value) {
+        public Criteria andDepositEqualTo(BigDecimal value) {
             addCriterion("deposit =", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositNotEqualTo(Long value) {
+        public Criteria andDepositNotEqualTo(BigDecimal value) {
             addCriterion("deposit <>", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositGreaterThan(Long value) {
+        public Criteria andDepositGreaterThan(BigDecimal value) {
             addCriterion("deposit >", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositGreaterThanOrEqualTo(Long value) {
+        public Criteria andDepositGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("deposit >=", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositLessThan(Long value) {
+        public Criteria andDepositLessThan(BigDecimal value) {
             addCriterion("deposit <", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositLessThanOrEqualTo(Long value) {
+        public Criteria andDepositLessThanOrEqualTo(BigDecimal value) {
             addCriterion("deposit <=", value, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositIn(List<Long> values) {
+        public Criteria andDepositIn(List<BigDecimal> values) {
             addCriterion("deposit in", values, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositNotIn(List<Long> values) {
+        public Criteria andDepositNotIn(List<BigDecimal> values) {
             addCriterion("deposit not in", values, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositBetween(Long value1, Long value2) {
+        public Criteria andDepositBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("deposit between", value1, value2, "deposit");
             return (Criteria) this;
         }
 
-        public Criteria andDepositNotBetween(Long value1, Long value2) {
+        public Criteria andDepositNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("deposit not between", value1, value2, "deposit");
             return (Criteria) this;
         }
@@ -425,52 +426,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceEqualTo(Long value) {
+        public Criteria andLivedPriceEqualTo(BigDecimal value) {
             addCriterion("lived_price =", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceNotEqualTo(Long value) {
+        public Criteria andLivedPriceNotEqualTo(BigDecimal value) {
             addCriterion("lived_price <>", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceGreaterThan(Long value) {
+        public Criteria andLivedPriceGreaterThan(BigDecimal value) {
             addCriterion("lived_price >", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceGreaterThanOrEqualTo(Long value) {
+        public Criteria andLivedPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("lived_price >=", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceLessThan(Long value) {
+        public Criteria andLivedPriceLessThan(BigDecimal value) {
             addCriterion("lived_price <", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceLessThanOrEqualTo(Long value) {
+        public Criteria andLivedPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("lived_price <=", value, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceIn(List<Long> values) {
+        public Criteria andLivedPriceIn(List<BigDecimal> values) {
             addCriterion("lived_price in", values, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceNotIn(List<Long> values) {
+        public Criteria andLivedPriceNotIn(List<BigDecimal> values) {
             addCriterion("lived_price not in", values, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceBetween(Long value1, Long value2) {
+        public Criteria andLivedPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("lived_price between", value1, value2, "livedPrice");
             return (Criteria) this;
         }
 
-        public Criteria andLivedPriceNotBetween(Long value1, Long value2) {
+        public Criteria andLivedPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("lived_price not between", value1, value2, "livedPrice");
             return (Criteria) this;
         }
@@ -485,52 +486,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillEqualTo(Long value) {
+        public Criteria andRoomBillEqualTo(BigDecimal value) {
             addCriterion("room_bill =", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillNotEqualTo(Long value) {
+        public Criteria andRoomBillNotEqualTo(BigDecimal value) {
             addCriterion("room_bill <>", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillGreaterThan(Long value) {
+        public Criteria andRoomBillGreaterThan(BigDecimal value) {
             addCriterion("room_bill >", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillGreaterThanOrEqualTo(Long value) {
+        public Criteria andRoomBillGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("room_bill >=", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillLessThan(Long value) {
+        public Criteria andRoomBillLessThan(BigDecimal value) {
             addCriterion("room_bill <", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillLessThanOrEqualTo(Long value) {
+        public Criteria andRoomBillLessThanOrEqualTo(BigDecimal value) {
             addCriterion("room_bill <=", value, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillIn(List<Long> values) {
+        public Criteria andRoomBillIn(List<BigDecimal> values) {
             addCriterion("room_bill in", values, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillNotIn(List<Long> values) {
+        public Criteria andRoomBillNotIn(List<BigDecimal> values) {
             addCriterion("room_bill not in", values, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillBetween(Long value1, Long value2) {
+        public Criteria andRoomBillBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("room_bill between", value1, value2, "roomBill");
             return (Criteria) this;
         }
 
-        public Criteria andRoomBillNotBetween(Long value1, Long value2) {
+        public Criteria andRoomBillNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("room_bill not between", value1, value2, "roomBill");
             return (Criteria) this;
         }
@@ -545,52 +546,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillEqualTo(Long value) {
+        public Criteria andFoodBillEqualTo(BigDecimal value) {
             addCriterion("food_bill =", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillNotEqualTo(Long value) {
+        public Criteria andFoodBillNotEqualTo(BigDecimal value) {
             addCriterion("food_bill <>", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillGreaterThan(Long value) {
+        public Criteria andFoodBillGreaterThan(BigDecimal value) {
             addCriterion("food_bill >", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillGreaterThanOrEqualTo(Long value) {
+        public Criteria andFoodBillGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("food_bill >=", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillLessThan(Long value) {
+        public Criteria andFoodBillLessThan(BigDecimal value) {
             addCriterion("food_bill <", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillLessThanOrEqualTo(Long value) {
+        public Criteria andFoodBillLessThanOrEqualTo(BigDecimal value) {
             addCriterion("food_bill <=", value, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillIn(List<Long> values) {
+        public Criteria andFoodBillIn(List<BigDecimal> values) {
             addCriterion("food_bill in", values, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillNotIn(List<Long> values) {
+        public Criteria andFoodBillNotIn(List<BigDecimal> values) {
             addCriterion("food_bill not in", values, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillBetween(Long value1, Long value2) {
+        public Criteria andFoodBillBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("food_bill between", value1, value2, "foodBill");
             return (Criteria) this;
         }
 
-        public Criteria andFoodBillNotBetween(Long value1, Long value2) {
+        public Criteria andFoodBillNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("food_bill not between", value1, value2, "foodBill");
             return (Criteria) this;
         }
@@ -605,52 +606,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andTelBillEqualTo(Long value) {
+        public Criteria andTelBillEqualTo(BigDecimal value) {
             addCriterion("tel_bill =", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillNotEqualTo(Long value) {
+        public Criteria andTelBillNotEqualTo(BigDecimal value) {
             addCriterion("tel_bill <>", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillGreaterThan(Long value) {
+        public Criteria andTelBillGreaterThan(BigDecimal value) {
             addCriterion("tel_bill >", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillGreaterThanOrEqualTo(Long value) {
+        public Criteria andTelBillGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("tel_bill >=", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillLessThan(Long value) {
+        public Criteria andTelBillLessThan(BigDecimal value) {
             addCriterion("tel_bill <", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillLessThanOrEqualTo(Long value) {
+        public Criteria andTelBillLessThanOrEqualTo(BigDecimal value) {
             addCriterion("tel_bill <=", value, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillIn(List<Long> values) {
+        public Criteria andTelBillIn(List<BigDecimal> values) {
             addCriterion("tel_bill in", values, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillNotIn(List<Long> values) {
+        public Criteria andTelBillNotIn(List<BigDecimal> values) {
             addCriterion("tel_bill not in", values, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillBetween(Long value1, Long value2) {
+        public Criteria andTelBillBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("tel_bill between", value1, value2, "telBill");
             return (Criteria) this;
         }
 
-        public Criteria andTelBillNotBetween(Long value1, Long value2) {
+        public Criteria andTelBillNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("tel_bill not between", value1, value2, "telBill");
             return (Criteria) this;
         }
@@ -665,52 +666,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillEqualTo(Long value) {
+        public Criteria andTotalBillEqualTo(BigDecimal value) {
             addCriterion("total_bill =", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillNotEqualTo(Long value) {
+        public Criteria andTotalBillNotEqualTo(BigDecimal value) {
             addCriterion("total_bill <>", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillGreaterThan(Long value) {
+        public Criteria andTotalBillGreaterThan(BigDecimal value) {
             addCriterion("total_bill >", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillGreaterThanOrEqualTo(Long value) {
+        public Criteria andTotalBillGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("total_bill >=", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillLessThan(Long value) {
+        public Criteria andTotalBillLessThan(BigDecimal value) {
             addCriterion("total_bill <", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillLessThanOrEqualTo(Long value) {
+        public Criteria andTotalBillLessThanOrEqualTo(BigDecimal value) {
             addCriterion("total_bill <=", value, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillIn(List<Long> values) {
+        public Criteria andTotalBillIn(List<BigDecimal> values) {
             addCriterion("total_bill in", values, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillNotIn(List<Long> values) {
+        public Criteria andTotalBillNotIn(List<BigDecimal> values) {
             addCriterion("total_bill not in", values, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillBetween(Long value1, Long value2) {
+        public Criteria andTotalBillBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("total_bill between", value1, value2, "totalBill");
             return (Criteria) this;
         }
 
-        public Criteria andTotalBillNotBetween(Long value1, Long value2) {
+        public Criteria andTotalBillNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("total_bill not between", value1, value2, "totalBill");
             return (Criteria) this;
         }
@@ -725,52 +726,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositEqualTo(Long value) {
+        public Criteria andRebackDepositEqualTo(BigDecimal value) {
             addCriterion("reback_deposit =", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositNotEqualTo(Long value) {
+        public Criteria andRebackDepositNotEqualTo(BigDecimal value) {
             addCriterion("reback_deposit <>", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositGreaterThan(Long value) {
+        public Criteria andRebackDepositGreaterThan(BigDecimal value) {
             addCriterion("reback_deposit >", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositGreaterThanOrEqualTo(Long value) {
+        public Criteria andRebackDepositGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("reback_deposit >=", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositLessThan(Long value) {
+        public Criteria andRebackDepositLessThan(BigDecimal value) {
             addCriterion("reback_deposit <", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositLessThanOrEqualTo(Long value) {
+        public Criteria andRebackDepositLessThanOrEqualTo(BigDecimal value) {
             addCriterion("reback_deposit <=", value, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositIn(List<Long> values) {
+        public Criteria andRebackDepositIn(List<BigDecimal> values) {
             addCriterion("reback_deposit in", values, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositNotIn(List<Long> values) {
+        public Criteria andRebackDepositNotIn(List<BigDecimal> values) {
             addCriterion("reback_deposit not in", values, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositBetween(Long value1, Long value2) {
+        public Criteria andRebackDepositBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("reback_deposit between", value1, value2, "rebackDeposit");
             return (Criteria) this;
         }
 
-        public Criteria andRebackDepositNotBetween(Long value1, Long value2) {
+        public Criteria andRebackDepositNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("reback_deposit not between", value1, value2, "rebackDeposit");
             return (Criteria) this;
         }
@@ -855,52 +856,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesEqualTo(Long value) {
+        public Criteria andRealWagesEqualTo(BigDecimal value) {
             addCriterion("real_wages =", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesNotEqualTo(Long value) {
+        public Criteria andRealWagesNotEqualTo(BigDecimal value) {
             addCriterion("real_wages <>", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesGreaterThan(Long value) {
+        public Criteria andRealWagesGreaterThan(BigDecimal value) {
             addCriterion("real_wages >", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesGreaterThanOrEqualTo(Long value) {
+        public Criteria andRealWagesGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("real_wages >=", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesLessThan(Long value) {
+        public Criteria andRealWagesLessThan(BigDecimal value) {
             addCriterion("real_wages <", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesLessThanOrEqualTo(Long value) {
+        public Criteria andRealWagesLessThanOrEqualTo(BigDecimal value) {
             addCriterion("real_wages <=", value, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesIn(List<Long> values) {
+        public Criteria andRealWagesIn(List<BigDecimal> values) {
             addCriterion("real_wages in", values, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesNotIn(List<Long> values) {
+        public Criteria andRealWagesNotIn(List<BigDecimal> values) {
             addCriterion("real_wages not in", values, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesBetween(Long value1, Long value2) {
+        public Criteria andRealWagesBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("real_wages between", value1, value2, "realWages");
             return (Criteria) this;
         }
 
-        public Criteria andRealWagesNotBetween(Long value1, Long value2) {
+        public Criteria andRealWagesNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("real_wages not between", value1, value2, "realWages");
             return (Criteria) this;
         }
@@ -915,52 +916,52 @@ public class OrderFormExample {
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeEqualTo(Long value) {
+        public Criteria andOddChangeEqualTo(BigDecimal value) {
             addCriterion("odd_change =", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeNotEqualTo(Long value) {
+        public Criteria andOddChangeNotEqualTo(BigDecimal value) {
             addCriterion("odd_change <>", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeGreaterThan(Long value) {
+        public Criteria andOddChangeGreaterThan(BigDecimal value) {
             addCriterion("odd_change >", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeGreaterThanOrEqualTo(Long value) {
+        public Criteria andOddChangeGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("odd_change >=", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeLessThan(Long value) {
+        public Criteria andOddChangeLessThan(BigDecimal value) {
             addCriterion("odd_change <", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeLessThanOrEqualTo(Long value) {
+        public Criteria andOddChangeLessThanOrEqualTo(BigDecimal value) {
             addCriterion("odd_change <=", value, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeIn(List<Long> values) {
+        public Criteria andOddChangeIn(List<BigDecimal> values) {
             addCriterion("odd_change in", values, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeNotIn(List<Long> values) {
+        public Criteria andOddChangeNotIn(List<BigDecimal> values) {
             addCriterion("odd_change not in", values, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeBetween(Long value1, Long value2) {
+        public Criteria andOddChangeBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("odd_change between", value1, value2, "oddChange");
             return (Criteria) this;
         }
 
-        public Criteria andOddChangeNotBetween(Long value1, Long value2) {
+        public Criteria andOddChangeNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("odd_change not between", value1, value2, "oddChange");
             return (Criteria) this;
         }

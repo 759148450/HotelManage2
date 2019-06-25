@@ -1,5 +1,6 @@
 package com.neuedu.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderForm extends MyPage{
@@ -7,29 +8,29 @@ public class OrderForm extends MyPage{
 
     private String roomId;
 
-    private Long roomPrice;
+    private BigDecimal roomPrice;
 
-    private Long deposit;
+    private BigDecimal deposit;
 
     private Integer livedDays;
 
-    private Long livedPrice;
+    private BigDecimal livedPrice;
 
-    private Long roomBill;
+    private BigDecimal roomBill;
 
-    private Long foodBill;
+    private BigDecimal foodBill;
 
-    private Long telBill;
+    private BigDecimal telBill;
 
-    private Long totalBill;
+    private BigDecimal totalBill;
 
-    private Long rebackDeposit;
+    private BigDecimal rebackDeposit;
 
     private String payStyle;
 
-    private Long realWages;
+    private BigDecimal realWages;
 
-    private Long oddChange;
+    private BigDecimal oddChange;
 
     private String user;
 
@@ -55,19 +56,19 @@ public class OrderForm extends MyPage{
         this.roomId = roomId == null ? null : roomId.trim();
     }
 
-    public Long getRoomPrice() {
+    public BigDecimal getRoomPrice() {
         return roomPrice;
     }
 
-    public void setRoomPrice(Long roomPrice) {
+    public void setRoomPrice(BigDecimal roomPrice) {
         this.roomPrice = roomPrice;
     }
 
-    public Long getDeposit() {
+    public BigDecimal getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(Long deposit) {
+    public void setDeposit(BigDecimal deposit) {
         this.deposit = deposit;
     }
 
@@ -79,51 +80,51 @@ public class OrderForm extends MyPage{
         this.livedDays = livedDays;
     }
 
-    public Long getLivedPrice() {
+    public BigDecimal getLivedPrice() {
         return livedPrice;
     }
 
-    public void setLivedPrice(Long livedPrice) {
+    public void setLivedPrice(BigDecimal livedPrice) {
         this.livedPrice = livedPrice;
     }
 
-    public Long getRoomBill() {
+    public BigDecimal getRoomBill() {
         return roomBill;
     }
 
-    public void setRoomBill(Long roomBill) {
+    public void setRoomBill(BigDecimal roomBill) {
         this.roomBill = roomBill;
     }
 
-    public Long getFoodBill() {
+    public BigDecimal getFoodBill() {
         return foodBill;
     }
 
-    public void setFoodBill(Long foodBill) {
+    public void setFoodBill(BigDecimal foodBill) {
         this.foodBill = foodBill;
     }
 
-    public Long getTelBill() {
+    public BigDecimal getTelBill() {
         return telBill;
     }
 
-    public void setTelBill(Long telBill) {
+    public void setTelBill(BigDecimal telBill) {
         this.telBill = telBill;
     }
 
-    public Long getTotalBill() {
+    public BigDecimal getTotalBill() {
         return totalBill;
     }
 
-    public void setTotalBill(Long totalBill) {
+    public void setTotalBill(BigDecimal totalBill) {
         this.totalBill = totalBill;
     }
 
-    public Long getRebackDeposit() {
+    public BigDecimal getRebackDeposit() {
         return rebackDeposit;
     }
 
-    public void setRebackDeposit(Long rebackDeposit) {
+    public void setRebackDeposit(BigDecimal rebackDeposit) {
         this.rebackDeposit = rebackDeposit;
     }
 
@@ -135,19 +136,19 @@ public class OrderForm extends MyPage{
         this.payStyle = payStyle == null ? null : payStyle.trim();
     }
 
-    public Long getRealWages() {
+    public BigDecimal getRealWages() {
         return realWages;
     }
 
-    public void setRealWages(Long realWages) {
+    public void setRealWages(BigDecimal realWages) {
         this.realWages = realWages;
     }
 
-    public Long getOddChange() {
+    public BigDecimal getOddChange() {
         return oddChange;
     }
 
-    public void setOddChange(Long oddChange) {
+    public void setOddChange(BigDecimal oddChange) {
         this.oddChange = oddChange;
     }
 
