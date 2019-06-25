@@ -113,7 +113,12 @@ public class OrderManageServiceImpl implements OrderManageService {
         OrderManageExample orderManageExample = new OrderManageExample();
         OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
 
-        criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        /*根据现在房间号模糊查询*/
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())){
+            criteria.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        }else {
+            criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        }
 
         return orderManageMapper.selectByExample(orderManageExample);
     }

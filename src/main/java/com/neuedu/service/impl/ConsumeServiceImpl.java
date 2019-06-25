@@ -45,6 +45,15 @@ public class ConsumeServiceImpl implements ConsumeService {
         return consumeMapper.selectByExample(consumeExample);
     }
 
+    //根据房间号live_id查询所有的附加消费
+    @Override
+    public List<Consume> getAllConsume(Integer liveId) {
+        ConsumeExample consumeExample = new ConsumeExample();
+        ConsumeExample.Criteria criteria = consumeExample.createCriteria();
+        criteria.andLiveIdEqualTo(liveId);
+        return consumeMapper.selectByExample(consumeExample);
+    }
+
     @Override
     public Consume getconsumeById(int id) {
         return consumeMapper.selectByPrimaryKey(id);

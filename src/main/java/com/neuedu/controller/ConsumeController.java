@@ -69,6 +69,13 @@ public class ConsumeController {
         return map;
     }
 
+    //根据房间号live_id查询所有附加消费
+    @GetMapping("/getAllConsume")
+    public List<Consume> getAllConsume(Integer liveId){
+        System.out.println("房间号"+liveId);
+        return consumeService.getAllConsume(liveId);
+    }
+
 //    /*查询相关联的所有商品*/
 //    @GetMapping("/getAllGoods")
 //    public List<Goods> getAll(Goods goods){
