@@ -110,7 +110,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
-    //ZYP 查询已预订0、已入住2和已换房4、已退房3状态的房间
+    //ZYP 查询已预订0、已入住2和已换房4、已退房3状态的房间 财务进账报表
     @Override
     public List<OrderManage> getOrderManages3(OrderManage orderManage) {
 
@@ -118,10 +118,43 @@ public class OrderManageServiceImpl implements OrderManageService {
         OrderManageExample orderManageExample = new OrderManageExample();
         OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
 
+        //根据时间范围查询
+        Date predate;
+        Date latedate;
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));    //获取东八区时间
+
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        String curDate = s.format(c.getTime());
+
+        SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-dd 23:59:59");
+        String curDate2 = s2.format(c.getTime());//当前日期
+
+        //没有时间的时候默认是今天的查询：
+
         /*根据现在房间号模糊查询*/
         if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())){
             criteria.andCurrentRoomNameLike("%"+orderManage.getCurrentRoomName()+"%").andActiveEqualTo(1).andBookStatusNotEqualTo(1);
-        }else {
+        }
+        if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
+            predate = StringToDate(curDate);
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
+            predate = orderManage.getArrivalTime();
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
+            predate = StringToDate(curDate);
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
+        }
+        else {
+            predate = orderManage.getArrivalTime();
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
         }
 
