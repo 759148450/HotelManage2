@@ -18,4 +18,5 @@ public interface OrderManageService {
     int del(OrderManage orderManage);
     //    int del(Integer id);
     int update(OrderManage orderManage);
+    List<OrderManage> getLeavingGuestTodayAll(OrderManage orderManage);//ldf 离店报表
 }

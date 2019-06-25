@@ -187,5 +187,12 @@ public class OrderManageController {
         orderManage.setBookStatus(4);
         return orderManageService.update(orderManage);
     }
+    //ldf  离店报表
+    @GetMapping("/getLeavingGuestTodayAll")
+    public PageInfo<OrderManage> getLeavingGuestTodayAll(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.getLeavingGuestTodayAll(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
 }
 

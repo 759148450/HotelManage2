@@ -7,8 +7,13 @@ import com.neuedu.service.OrderManageService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
+
 /*Vanilla
  * 预定信息管理
  * 6-17
@@ -144,6 +149,85 @@ public class OrderManageServiceImpl implements OrderManageService {
 
         return orderManageMapper.selectByExample(orderManageExample);
     }
+
+    //ldf 离店报表
+    @Override
+    public List<OrderManage> getLeavingGuestTodayAll(OrderManage orderManage) {
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+
+        Date predate;
+        Date latedate;
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));    //获取东八区时间
+//            //获取年
+//            int year = c.get(Calendar.YEAR);
+//            //获取月份，0表示1月份
+//            int month = c.get(Calendar.MONTH) + 1;
+//            //获取当前天数
+//            int day = c.get(Calendar.DAY_OF_MONTH);
+//            //获取本月最小天数
+//            int first = c.getActualMinimum(Calendar.DAY_OF_MONTH);
+//            //获取本月最大天数
+//            int last = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+//            //获取当前小时
+//            int time = c.get(Calendar.HOUR_OF_DAY);
+//            //获取当前分钟
+//            int min = c.get(Calendar.MINUTE);
+//            //获取当前秒
+//            int sec = c.get(Calendar.SECOND);
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        String curDate = s.format(c.getTime());                                      //当前日期
+//            System.out.println("当前时间：" + year + "-" + month + "-" + day + " " + time + ":" + min + ":" + sec);
+//            System.out.println("第一天和最后天：" + first + "," + last);
+//            System.out.println(curDate);
+
+        SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-dd 23:59:59");
+
+        String curDate2 = s2.format(c.getTime());//当前日期
+//            System.out.println("当前二次时间：" + year + "-" + month + "-" + day + " " + time + ":" + min + ":" + sec);
+//            System.out.println(curDate2);
+
+        //没有时间的时候默认是今天的查询：
+        if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
+            predate = StringToDate(curDate);
+            latedate = StringToDate(curDate2);
+        } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
+            predate = orderManage.getArrivalTime();
+            latedate = StringToDate(curDate2);
+        }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
+            predate = StringToDate(curDate);
+            latedate = orderManage.getLeaveTime();
+        }else{
+            predate = orderManage.getArrivalTime();
+            latedate = orderManage.getLeaveTime();
+        }
+
+        criteria.andLeaveTimeBetween(predate, latedate);
+//            System.out.println("结束了");
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())) {
+            criteria.andCurrentRoomNameEqualTo(orderManage.getCurrentRoomName());
+        }
+
+        //查询active为1且已经结账的订单
+        criteria.andActiveEqualTo(1).andBookStatusEqualTo(3);
+
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
+    //String转Date
+    public Date StringToDate(String dateString) {
+        SimpleDateFormat sdf = new SimpleDateFormat("y-M-d H:m:s");
+        Date date = null;
+        try {
+            date = sdf.parse(dateString);
+        } catch (ParseException e) {
+            //sdf的格式要与dateString的格式相同，否者会报错
+            e.printStackTrace();
+        }
+        return date;
+    }
+
 
 
 
