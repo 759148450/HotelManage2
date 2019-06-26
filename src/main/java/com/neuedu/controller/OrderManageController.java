@@ -1,5 +1,6 @@
 package com.neuedu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.Leaguer;
 import com.neuedu.pojo.OrderForm;
@@ -193,6 +194,19 @@ public class OrderManageController {
         List<OrderManage> orderManages =orderManageService.getLeavingGuestTodayAll(orderManage);
         PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
         return pageInfo;
+    }
+    //ldf统计查询
+    @GetMapping("/findDataForStatistics")
+    public String findDataForStatistics(){
+        Map<String,List<?>> map = new HashMap<>();
+        map.put("findGroupByRTN",orderManageService.findGroupByRTN());
+        map.put("findWeekBynNum",orderManageService.findWeekBynNum());
+        map.put("findTypeNumNull",orderManageService.findTypeNumNull());
+        map.put("findTypeNumTrue",orderManageService.findTypeNumTrue());
+        map.put("findTypeNumAll",orderManageService.findTypeNumAll());
+        map.put("findGuestBill",orderManageService.findGuestBill());
+        map.put("findRoomType",orderManageService.findRoomType());
+        return JSON.toJSONString(map);
     }
 }
 

@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 /*Vanilla
  * 预定信息管理
@@ -289,5 +286,33 @@ public class OrderManageServiceImpl implements OrderManageService {
     @Override
     public int update(OrderManage orderManage) {
         return orderManageMapper.updateByPrimaryKeySelective(orderManage);
+    }
+
+    //LDF-统计查询
+    @Override
+    public List<Map<String,String>> findGroupByRTN() {
+        return orderManageMapper.findGroupByRTN();
+    }
+    @Override
+    public List<Map<String,String>> findWeekBynNum() {
+        return orderManageMapper.findWeekBynNum();
+    }
+    @Override
+    public List<Map<String,String>> findTypeNumNull() {
+        return orderManageMapper.findTypeNumNull();
+    }
+    @Override
+    public List<Map<String,String>> findTypeNumTrue() {
+        return orderManageMapper.findTypeNumTrue();
+    }
+    @Override
+    public List<Map<String, String>> findTypeNumAll() { return orderManageMapper.findTypeNumAll(); }
+    @Override
+    public List<Map<String,String>> findGuestBill() {
+        return orderManageMapper.findGuestBill();
+    }
+    @Override
+    public List<Map<String,String>> findRoomType() {
+        return orderManageMapper.findRoomType();
     }
 }
