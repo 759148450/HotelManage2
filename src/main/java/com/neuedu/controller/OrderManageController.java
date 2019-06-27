@@ -10,12 +10,19 @@ import com.neuedu.service.LeaguerService;
 import com.neuedu.service.OrderFormService;
 import com.neuedu.service.OrderManageService;
 import com.neuedu.service.RoomsService;
+import com.neuedu.utils.MyLog;
+import com.neuedu.pojo.User;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -86,6 +93,7 @@ public class OrderManageController {
     /**
      *     入住信息：将客房变为已预定状态
      */
+    @MyLog(value = "入住登记")  //这里添加了AOP的自定义注解
     @PostMapping("/addTo")
     public int addTo(OrderManage orderManage){
         Rooms rooms = new Rooms();
@@ -94,7 +102,7 @@ public class OrderManageController {
         roomsService.update(rooms);
         return orderManageService.add(orderManage);
     }
-
+    @MyLog(value = "预定一条信息")  //这里添加了AOP的自定义注解
     @PostMapping("/add")
     public int add(OrderManage orderManage){
         /*将客房变为已预定状态*/
@@ -102,6 +110,10 @@ public class OrderManageController {
         rooms.setId(orderManage.getCurrentRoomId());
         rooms.setStatus(1);
         roomsService.update(rooms);
+//        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+//        HttpSession session = request.getSession();
+//        User user= (User) session.getAttribute("user");
+//        System.out.println("Controller用户名"+user.getUserName());
         return orderManageService.add(orderManage);
     }
     @GetMapping("/del")
@@ -109,11 +121,13 @@ public class OrderManageController {
         return orderManageService.update(orderManage);
     }
 
+    @MyLog(value = "修改一条信息")  //这里添加了AOP的自定义注解
     @PostMapping("/update")
     public int update(@Valid OrderManage orderManage ,BindingResult bindingResult){
         return orderManageService.update(orderManage);
     }
     //修改房间状态和订单状态
+    @MyLog(value = "取消预定")  //这里添加了AOP的自定义注解
     @GetMapping("/updateBookStutas")
     public int updateBookStutas(OrderManage orderManage){
         System.out.println("房间状态"+orderManage.getBookStatus());
@@ -125,7 +139,6 @@ public class OrderManageController {
             rooms.setStatus(0);
             roomsService.update(rooms);
         }
-
         return orderManageService.update(orderManage);
     }
     @GetMapping("/getOne")
