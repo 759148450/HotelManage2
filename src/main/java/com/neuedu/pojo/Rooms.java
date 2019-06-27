@@ -20,7 +20,7 @@ public class Rooms extends MyPage{
 
     private BigDecimal normalPrice;
 
-    private Long discountPrice;
+    private BigDecimal discountPrice;
 
     private BigDecimal gvipPrice;
 
@@ -101,11 +101,11 @@ public class Rooms extends MyPage{
         this.normalPrice = normalPrice;
     }
 
-    public Long getDiscountPrice() {
+    public BigDecimal getDiscountPrice() {
         return discountPrice;
     }
 
-    public void setDiscountPrice(Long discountPrice) {
+    public void setDiscountPrice(BigDecimal discountPrice) {
         this.discountPrice = discountPrice;
     }
 

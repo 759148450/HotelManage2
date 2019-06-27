@@ -626,52 +626,52 @@ public class RoomsExample {
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceEqualTo(Long value) {
+        public Criteria andDiscountPriceEqualTo(BigDecimal value) {
             addCriterion("discount_price =", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotEqualTo(Long value) {
+        public Criteria andDiscountPriceNotEqualTo(BigDecimal value) {
             addCriterion("discount_price <>", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceGreaterThan(Long value) {
+        public Criteria andDiscountPriceGreaterThan(BigDecimal value) {
             addCriterion("discount_price >", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceGreaterThanOrEqualTo(Long value) {
+        public Criteria andDiscountPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("discount_price >=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceLessThan(Long value) {
+        public Criteria andDiscountPriceLessThan(BigDecimal value) {
             addCriterion("discount_price <", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceLessThanOrEqualTo(Long value) {
+        public Criteria andDiscountPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("discount_price <=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceIn(List<Long> values) {
+        public Criteria andDiscountPriceIn(List<BigDecimal> values) {
             addCriterion("discount_price in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotIn(List<Long> values) {
+        public Criteria andDiscountPriceNotIn(List<BigDecimal> values) {
             addCriterion("discount_price not in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceBetween(Long value1, Long value2) {
+        public Criteria andDiscountPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("discount_price between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotBetween(Long value1, Long value2) {
+        public Criteria andDiscountPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("discount_price not between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
