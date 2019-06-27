@@ -65,7 +65,13 @@ public class LogManagementAspect {
         //请求的参数
         Object[] args = joinPoint.getArgs();
         //将参数所在的数组转换成json
-        String params = JSON.toJSONString(args);
+        String params = null;
+        try {
+            params = JacksonUtils.obj2json(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         logManagement.setParams(params);
         logManagement.setCreateDate(new Date());
         //获取用户名
