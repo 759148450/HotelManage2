@@ -61,4 +61,6 @@ public class UserController {
     public User getOne(Integer id){
         return userService.getuserById(id);
     }
+
+
 }

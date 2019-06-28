@@ -37,8 +37,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAll(User user) {
-        UserExample floorExample = new UserExample();
-        return userMapper.selectByExample(floorExample);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        if (StringUtils.isNotBlank(user.getUserName())) {
+            criteria.andUserNameEqualTo( user.getUserName()).andActiveEqualTo(1);
+            if (user.getId()!=null) {
+                criteria.andIdNotEqualTo( user.getId());
+            }
+        }
+
+        return userMapper.selectByExample(userExample);
     }
 
     @Override
