@@ -3,6 +3,7 @@ package com.neuedu.controller;
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.*;
 import com.neuedu.service.*;
+import com.neuedu.utils.MyLog;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,19 +42,24 @@ public class ConsumeController {
     public List<Consume> getAll(Consume consume){
         return consumeService.getAll(consume);
     }
+
+    @MyLog(value = "添加附加消费入账账单")  //这里添加了AOP的自定义注解
     @PostMapping("/add")
     public int add(Consume consume){
         return consumeService.add(consume);
     }
+
     @GetMapping("/del")
     public int del(Consume consume){
         return consumeService.update(consume);
     }
 
+    @MyLog(value = "附加消费修改")  //这里添加了AOP的自定义注解
     @PostMapping("/update")
     public int update(@Valid Consume consume, BindingResult bindingResult){
         return consumeService.update(consume);
     }
+
     @GetMapping("/getOne")
     public Consume getOne(Integer id){
         return consumeService.getconsumeById(id);

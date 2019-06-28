@@ -60,9 +60,7 @@ public class OrderManageServiceImpl implements OrderManageService {
         else {
             criteria.andActiveEqualTo(1);
         }
-//        if(orderManage.getActive()!=null)
-//            criteria.andActiveEqualTo(orderManage.getActive());
-
+        orderManageExample.setOrderByClause("id desc");
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
@@ -103,7 +101,7 @@ public class OrderManageServiceImpl implements OrderManageService {
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
             orderManageExample.or(criteria2);
         }
-
+        orderManageExample.setOrderByClause("id desc");
         return orderManageMapper.selectByExample(orderManageExample);
     }
 
@@ -154,7 +152,7 @@ public class OrderManageServiceImpl implements OrderManageService {
             criteria.andLeaveTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusNotEqualTo(1);
         }
-
+        orderManageExample.setOrderByClause("id desc");
         return orderManageMapper.selectByExample(orderManageExample);
     }
     //ZYP 查询已预订、已取消状态的房间

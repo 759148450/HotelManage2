@@ -82,6 +82,7 @@ public class LogManagementServiceImpl implements LogManagementService {
         }
 
         criteria.andCreateDateBetween(predate, latedate);
+        logManagementExample.setOrderByClause("id desc");
 //        LogManagementTypeExample logManagementTypeExample=new LogManagementTypeExample();
 //        LogManagementTypeExample.Criteria criteria_type= logManagementTypeExample.createCriteria();
 

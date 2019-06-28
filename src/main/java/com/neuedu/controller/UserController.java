@@ -3,15 +3,15 @@ package com.neuedu.controller;
 import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.User;
 import com.neuedu.service.UserService;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import org.apache.ibatis.annotations.Param;
-import org.apache.shiro.authc.UsernamePasswordToken;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 import java.util.List;
 
 @RestController

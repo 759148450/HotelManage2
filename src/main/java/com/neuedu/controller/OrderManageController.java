@@ -88,7 +88,7 @@ public class OrderManageController {
     /**
      *     入住信息：将客房变为已预定状态
      */
-    @MyLog(value = "入住登记")  //这里添加了AOP的自定义注解
+    @MyLog(value = "入住登记一条信息")  //这里添加了AOP的自定义注解
     @PostMapping("/addTo")
     public int addTo(OrderManage orderManage){
         Rooms rooms = new Rooms();
@@ -136,6 +136,20 @@ public class OrderManageController {
         }
         return orderManageService.update(orderManage);
     }
+    @MyLog(value = "预定转入住")  //这里添加了AOP的自定义注解
+    @GetMapping("/updateBookStutas1")
+    public int updateBookStutas1(OrderManage orderManage){
+        System.out.println("房间状态"+orderManage.getBookStatus());
+        System.out.println("房间状态"+orderManage.getCurrentRoomId());
+        if(orderManage.getBookStatus()==2){
+            /*将客房变为已空房状态*/
+            Rooms rooms = new Rooms();
+            rooms.setId(orderManage.getCurrentRoomId());
+            rooms.setStatus(2);
+            roomsService.update(rooms);
+        }
+        return orderManageService.update(orderManage);
+    }
     @GetMapping("/getOne")
     public OrderManage getOne(@Valid Integer id){
         return orderManageService.getorderManageById(id);
@@ -176,6 +190,7 @@ public class OrderManageController {
 ////        goodsType.setActive(1);
 //        return leaguerService.getAll(leaguers);
 //    }
+    @MyLog(value = "换房处理")  //这里添加了AOP的自定义注解
     @PostMapping("/change")
     public int change(@Valid OrderManage orderManage ,BindingResult bindingResult){
 

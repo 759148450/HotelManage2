@@ -7,6 +7,7 @@ import com.neuedu.pojo.Rooms;
 import com.neuedu.service.OrderFormService;
 import com.neuedu.service.OrderManageService;
 import com.neuedu.service.RoomsService;
+import com.neuedu.utils.MyLog;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,7 @@ public class OrderFormController {
     public List<OrderForm> getAll(OrderForm orderForm){
         return orderFormService.getAll(orderForm);
     }
+    @MyLog(value = "退房结账处理")  //这里添加了AOP的自定义注解
     @PostMapping("/add")
     public int add(OrderForm orderForm , OrderManage orderManage){
         System.out.println("房间号id"+orderManage.getCurrentRoomId());

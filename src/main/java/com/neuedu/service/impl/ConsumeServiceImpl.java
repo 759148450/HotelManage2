@@ -35,7 +35,7 @@ public class ConsumeServiceImpl implements ConsumeService {
         else {
             criteria.andActiveEqualTo(1);
         }
-
+        consumeExample.setOrderByClause("id desc");
         return consumeMapper.selectByExample(consumeExample);
     }
 
