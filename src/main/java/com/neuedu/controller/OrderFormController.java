@@ -1,9 +1,11 @@
 package com.neuedu.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.neuedu.pojo.Leaguer;
 import com.neuedu.pojo.OrderForm;
 import com.neuedu.pojo.OrderManage;
 import com.neuedu.pojo.Rooms;
+import com.neuedu.service.LeaguerService;
 import com.neuedu.service.OrderFormService;
 import com.neuedu.service.OrderManageService;
 import com.neuedu.service.RoomsService;
@@ -25,6 +27,8 @@ public class OrderFormController {
     RoomsService roomsService;
     @Resource
     OrderManageService orderManageService;
+    @Resource
+    LeaguerService leaguerService;
     @GetMapping("/list")
     public PageInfo<OrderForm> getOrderForm(OrderForm orderForm){
         List<OrderForm> orderForms =orderFormService.getOrderForms(orderForm);
@@ -38,9 +42,13 @@ public class OrderFormController {
     }
     @MyLog(value = "退房结账处理")  //这里添加了AOP的自定义注解
     @PostMapping("/add")
-    public int add(OrderForm orderForm , OrderManage orderManage){
+    public int add(OrderForm orderForm , OrderManage orderManage,Leaguer leaguer){
         System.out.println("房间号id"+orderManage.getCurrentRoomId());
         System.out.println("入住单号id"+orderManage.getId());
+        System.out.println("会员编号"+orderManage.getMemberId());
+        System.out.println("会员结账前积分"+leaguer.getLeaguerScore());
+        int leaguerScore =leaguer.getLeaguerScore() + orderForm.getTotalBill().intValue();//将结账金额转换成int型
+        System.out.println("结账后积分"+leaguerScore);
         /*将客房变为空房状态*/
         Rooms rooms = new Rooms();
         rooms.setId(orderManage.getCurrentRoomId());
@@ -51,6 +59,14 @@ public class OrderFormController {
         orderManage1.setId(orderManage.getId());
         orderManage1.setBookStatus(3);
         orderManageService.update(orderManage1);
+        //将leaguer表会员积分进行更新
+        Leaguer leaguer2 = new Leaguer();
+        leaguer2.setId(orderManage.getMemberId());
+        leaguer2.setLeaguerScore(leaguerScore);
+        if (leaguerScore>5000){
+            leaguer2.setLeaguerRank("VIP");
+        }
+        leaguerService.update(leaguer2);
         //进行结账处理
         return orderFormService.add(orderForm);
     }

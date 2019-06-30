@@ -63,16 +63,16 @@ public class LogManagementAspect {
         logManagement.setMethod(className + "." + methodName);
 
         //请求的参数
-        Object[] args = joinPoint.getArgs();
-        //将参数所在的数组转换成json
-        String params = null;
-        try {
-            params = JacksonUtils.obj2json(args);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        logManagement.setParams(params);
+//        Object[] args = joinPoint.getArgs();
+//        //将参数所在的数组转换成json
+//        String params = null;
+//        try {
+//            params = JacksonUtils.obj2json(args);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        logManagement.setParams(params);
         logManagement.setCreateDate(new Date());
         //获取用户名
         //此例子用到了ShiroUtils框架来实现获取用户名，此处还可以用session来获取登录操作名

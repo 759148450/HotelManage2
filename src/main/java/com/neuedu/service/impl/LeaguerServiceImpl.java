@@ -45,7 +45,11 @@ public class LeaguerServiceImpl implements LeaguerService {
     @Override
     public List<Leaguer> getAll(Leaguer leaguer) {
         LeaguerExample leaguerExample = new LeaguerExample();
-//        leaguerExample.createCriteria().andActiveEqualTo(1);
+        LeaguerExample.Criteria criteria = leaguerExample.createCriteria();
+        //通过id查询
+        if (leaguer.getId()!=null) {
+            criteria.andIdEqualTo(leaguer.getId());
+        }
         return leaguerMapper.selectByExample(leaguerExample);
     }
 
