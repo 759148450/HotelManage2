@@ -231,5 +231,21 @@ public class OrderManageController {
         map.put("findRoomType",orderManageService.findRoomType());
         return JSON.toJSONString(map);
     }
+
+    //ymq 查询已预订0、已取消1状态的房间    预定客人报表
+    @GetMapping("/ReservationAndCanacel")
+    public PageInfo<OrderManage> ReservationAndCanacel(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.ReservationAndCanacel(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
+
+    //ymq   在住客人报表
+    @GetMapping("/getlistLived")
+    public PageInfo<OrderManage> getlistLived(OrderManage orderManage){
+        List<OrderManage> orderManages =orderManageService.getlistLived(orderManage);
+        PageInfo<OrderManage> pageInfo = new PageInfo<>(orderManages);
+        return pageInfo;
+    }
 }
 

@@ -30,4 +30,7 @@ public interface OrderManageService {
     //    int del(Integer id);
     int update(OrderManage orderManage);
     List<OrderManage> getLeavingGuestTodayAll(OrderManage orderManage);//ldf 离店报表
+
+    List<OrderManage> ReservationAndCanacel(OrderManage orderManage);//ymq 预定报表
+    List<OrderManage> getlistLived(OrderManage orderManage);//ymq  在住报表
 }

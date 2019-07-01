@@ -313,4 +313,117 @@ public class OrderManageServiceImpl implements OrderManageService {
     public List<Map<String,String>> findRoomType() {
         return orderManageMapper.findRoomType();
     }
+
+    //ymq 预定报表
+    @Override
+    public List<OrderManage> ReservationAndCanacel(OrderManage orderManage) {
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+        OrderManageExample.Criteria criteria2 = orderManageExample.createCriteria();
+        Date predate;
+        Date latedate;
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));    //获取东八区时间
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        String curDate = s.format(c.getTime());                                      //当前日期
+        SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-dd 23:59:59");
+        String curDate2 = s2.format(c.getTime());//当前日期
+        //没有时间的时候默认是今天的查询：
+        if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
+            predate = StringToDate(curDate);
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+        } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
+            predate = orderManage.getArrivalTime();
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+
+        }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
+            predate = StringToDate(curDate);
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+
+        } else{
+            predate = orderManage.getArrivalTime();
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
+            orderManageExample.or(criteria2);
+
+        }
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())) {
+            criteria.andCurrentRoomNameEqualTo(orderManage.getCurrentRoomName());
+        }
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
+    //ymq 在住报表
+    @Override
+    public List<OrderManage> getlistLived(OrderManage orderManage) {
+        PageHelper.startPage(orderManage.getPageNo(), orderManage.getPageSize());
+        OrderManageExample orderManageExample = new OrderManageExample();
+        OrderManageExample.Criteria criteria = orderManageExample.createCriteria();
+        OrderManageExample.Criteria criteria2 = orderManageExample.createCriteria();
+        Date predate;
+        Date latedate;
+        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));    //获取东八区时间
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        String curDate = s.format(c.getTime());                                      //当前日期
+        SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-dd 23:59:59");
+        String curDate2 = s2.format(c.getTime());//当前日期
+        //没有时间的时候默认是今天的查询：
+        if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
+            predate = StringToDate(curDate);
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
+            predate = orderManage.getArrivalTime();
+            latedate = StringToDate(curDate2);
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
+            predate = StringToDate(curDate);
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+        } else{
+            predate = orderManage.getArrivalTime();
+            latedate = orderManage.getLeaveTime();
+            criteria.andLeaveTimeBetween(predate, latedate);
+            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
+            criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
+            orderManageExample.or(criteria2);
+
+        }
+        if (StringUtils.isNotBlank(orderManage.getCurrentRoomName())) {
+            criteria.andCurrentRoomNameEqualTo(orderManage.getCurrentRoomName());
+        }
+        return orderManageMapper.selectByExample(orderManageExample);
+    }
+
 }
