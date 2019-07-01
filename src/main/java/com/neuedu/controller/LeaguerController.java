@@ -28,6 +28,7 @@ public class LeaguerController {
     }
     @PostMapping("/add")
     public int add(Leaguer leaguer){
+        leaguer.setLeaguerRank("普通");
         return leaguerService.add(leaguer);
     }
     @GetMapping("/del")

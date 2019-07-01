@@ -1,9 +1,8 @@
 package com.neuedu.pojo;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Leaguer extends MyPage implements Serializable {
+public class Leaguer extends MyPage{
     private Integer id;
 
     private String leaguerName;
