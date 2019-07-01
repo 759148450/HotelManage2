@@ -332,16 +332,16 @@ public class OrderManageServiceImpl implements OrderManageService {
         if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
             predate = StringToDate(curDate);
             latedate = StringToDate(curDate2);
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andCreateDateBetween(predate, latedate);
+            criteria2.andCreateDateBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
             orderManageExample.or(criteria2);
         } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
             predate = orderManage.getArrivalTime();
             latedate = StringToDate(curDate2);
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andCreateDateBetween(predate, latedate);
+            criteria2.andCreateDateBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
             orderManageExample.or(criteria2);
@@ -349,8 +349,8 @@ public class OrderManageServiceImpl implements OrderManageService {
         }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
             predate = StringToDate(curDate);
             latedate = orderManage.getLeaveTime();
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andCreateDateBetween(predate, latedate);
+            criteria2.andCreateDateBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
             orderManageExample.or(criteria2);
@@ -358,8 +358,8 @@ public class OrderManageServiceImpl implements OrderManageService {
         } else{
             predate = orderManage.getArrivalTime();
             latedate = orderManage.getLeaveTime();
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andCreateDateBetween(predate, latedate);
+            criteria2.andCreateDateBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(0);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(1);
             orderManageExample.or(criteria2);
