@@ -68,13 +68,20 @@ public class RoomsController {
         return roomsService.getAll(rooms);
     }
 
-    /*查询相关联的所有楼层信息*/
+    /*查询相关联的所有楼层信息 zyp未用该接口*/
     @GetMapping("/getAllFloor")
     public List<Floor> getAll(Floor floor){
         return floorService.getAll(floor);
     }
 
-    /*查询相关联的所有房间类型信息*/
+    /*查询相关联的所有有效楼层信息*/
+    @GetMapping("/getUsefulAllFloor")
+    public List<Floor> getUsefulAll(Floor floor){
+        floor.setActive(1);
+        return floorService.getAll(floor);
+    }
+
+    /*查询相关联的所有房间类型信息 zyp未用该接口*/
     @GetMapping("/getAllGuestType")
     public List<GuestType> getAll(GuestType guestType){
         return guestTypeService.getAll(guestType);
