@@ -19,9 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /*Vanilla
 * 预定信息管理
@@ -105,6 +104,15 @@ public class OrderManageController {
         rooms.setId(orderManage.getCurrentRoomId());
         rooms.setStatus(1);
         roomsService.update(rooms);
+        //更新会员信息表的最后一次预定时间  zyp--2019-7-1
+        Date date = new Date();
+        System.out.println(date+"当前时间");
+        System.out.println("会员编号"+orderManage.getMemberId());
+        Leaguer leaguer = new Leaguer();
+        leaguer.setId(orderManage.getMemberId());//获取会员id
+        leaguer.setTimeLastorder(date);//更新预定时间
+        leaguerService.update(leaguer);
+
 //        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 //        HttpSession session = request.getSession();
 //        User user= (User) session.getAttribute("user");
@@ -142,12 +150,21 @@ public class OrderManageController {
         System.out.println("房间状态"+orderManage.getBookStatus());
         System.out.println("房间状态"+orderManage.getCurrentRoomId());
         if(orderManage.getBookStatus()==2){
-            /*将客房变为已空房状态*/
+            /*将客房变为已入住状态*/
             Rooms rooms = new Rooms();
             rooms.setId(orderManage.getCurrentRoomId());
             rooms.setStatus(2);
             roomsService.update(rooms);
+            //更新会员信息表的最后一次入住时间  zyp--2019-7-1
+            Date date = new Date();
+            System.out.println(date+"当前时间");
+            System.out.println("会员编号"+orderManage.getMemberId());
+            Leaguer leaguer = new Leaguer();
+            leaguer.setId(orderManage.getMemberId());//获取会员id
+            leaguer.setTimeLastlive(date);//更新最后一次入住时间
+            leaguerService.update(leaguer);
         }
+
         return orderManageService.update(orderManage);
     }
     @GetMapping("/getOne")
