@@ -55,6 +55,9 @@ public class RoomsServiceImpl implements RoomsService {
     public List<Rooms> getAll(Rooms rooms) {
         RoomsExample roomsExample = new RoomsExample();
         RoomsExample.Criteria criteria = roomsExample.createCriteria();
+        if(rooms.getRoomTypeid()!=null){
+            criteria.andRoomTypeidEqualTo(rooms.getRoomTypeid()).andActiveEqualTo(1);
+        }
         if (rooms.getStatus()!=null){
             criteria.andStatusEqualTo(rooms.getStatus()).andActiveEqualTo(1);
         }
