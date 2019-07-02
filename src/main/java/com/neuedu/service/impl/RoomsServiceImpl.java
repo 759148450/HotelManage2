@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -44,6 +45,16 @@ public class RoomsServiceImpl implements RoomsService {
             criteria.andNormalPriceEqualTo(rooms.getNormalPrice()).andActiveEqualTo(1);
         } if (rooms.getStatus()!=null){
             criteria.andStatusEqualTo(rooms.getStatus()).andActiveEqualTo(1);
+        }
+        //根据价格范围搜索
+        if(rooms.getPrice1()!=null&&rooms.getPrice2()!=null){
+            criteria.andNormalPriceBetween(rooms.getPrice1(),rooms.getPrice2());
+        }
+        if(rooms.getPrice1()==null&&rooms.getPrice2()!=null){
+            criteria.andNormalPriceBetween(new BigDecimal(0),rooms.getPrice2());
+        }
+        if(rooms.getPrice1()!=null&&rooms.getPrice2()==null){
+            criteria.andNormalPriceBetween(rooms.getPrice1(),new BigDecimal(1000));
         }
         else {
             criteria.andActiveEqualTo(1);

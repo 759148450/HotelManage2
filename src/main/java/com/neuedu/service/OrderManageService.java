@@ -33,4 +33,6 @@ public interface OrderManageService {
 
     List<OrderManage> ReservationAndCanacel(OrderManage orderManage);//ymq 预定报表
     List<OrderManage> getlistLived(OrderManage orderManage);//ymq  在住报表
+
+
 }

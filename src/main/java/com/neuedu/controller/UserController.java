@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.neuedu.pojo.User;
 import com.neuedu.service.UserService;
 
+import com.neuedu.utils.MyLog;
 import org.apache.ibatis.annotations.Param;
 
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,7 @@ public class UserController {
         return userService.update(user);
     }
 
+    @MyLog(value = "登录")  //这里添加了AOP的自定义注解
     @CrossOrigin(allowCredentials="true")
     @PostMapping("/login")
     public User login(@Param("userName") String userName, @Param("userPwd") String userPwd, HttpServletResponse response){
