@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -58,6 +59,8 @@ public class OrderFormController {
         OrderManage orderManage1 = new OrderManage();
         orderManage1.setId(orderManage.getId());
         orderManage1.setBookStatus(3);
+        //更行预定订单的离店时间
+        orderManage1.setLeaveTime(new Date());
         orderManageService.update(orderManage1);
         //将leaguer表会员积分进行更新
         Leaguer leaguer2 = new Leaguer();
@@ -67,6 +70,8 @@ public class OrderFormController {
             leaguer2.setLeaguerRank("VIP");
         }
         leaguerService.update(leaguer2);
+
+
         //进行结账处理
         return orderFormService.add(orderForm);
     }

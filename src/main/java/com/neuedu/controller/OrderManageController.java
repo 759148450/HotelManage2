@@ -163,7 +163,7 @@ public class OrderManageController {
             leaguer.setTimeLastlive(date);//更新最后一次入住时间
             leaguerService.update(leaguer);
         }
-
+        orderManage.setArrivalTime(new Date());
         return orderManageService.update(orderManage);
     }
     @GetMapping("/getOne")
