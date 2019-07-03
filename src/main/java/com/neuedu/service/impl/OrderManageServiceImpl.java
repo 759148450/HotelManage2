@@ -44,12 +44,15 @@ public class OrderManageServiceImpl implements OrderManageService {
         /*根据预定状态查询信息*/
         if(orderManage.getBookStatus()!=null){
             //根据状态查询
-            if(orderManage.getBookStatus()!=5){
+            if(orderManage.getBookStatus()<5){
                 criteria.andBookStatusEqualTo(orderManage.getBookStatus()).andActiveEqualTo(1);
             }
             //若是5只查预定和取消的
-          else{
+          else if(orderManage.getBookStatus()==5){
                 criteria.andBookStatusBetween(0,1);
+            }
+            else{
+                criteria.andBookStatusBetween(0,2);
             }
         }
         /*根据预定人姓名模糊查询*/
@@ -265,8 +268,6 @@ public class OrderManageServiceImpl implements OrderManageService {
         }
         return date;
     }
-
-
 
 
     @Override
