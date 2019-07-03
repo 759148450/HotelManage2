@@ -400,32 +400,32 @@ public class OrderManageServiceImpl implements OrderManageService {
         if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()==null) {
             predate = StringToDate(curDate);
             latedate = StringToDate(curDate2);
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andArrivalTimeBetween(predate, latedate);
+            criteria2.andArrivalTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
             orderManageExample.or(criteria2);
         } else if (orderManage.getArrivalTime()!=null&&orderManage.getLeaveTime()==null) {
             predate = orderManage.getArrivalTime();
             latedate = StringToDate(curDate2);
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andArrivalTimeBetween(predate, latedate);
+            criteria2.andArrivalTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
             orderManageExample.or(criteria2);
         }else if(orderManage.getArrivalTime()==null&&orderManage.getLeaveTime()!=null){
             predate = StringToDate(curDate);
             latedate = orderManage.getLeaveTime();
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andArrivalTimeBetween(predate, latedate);
+            criteria2.andArrivalTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
             orderManageExample.or(criteria2);
         } else{
             predate = orderManage.getArrivalTime();
             latedate = orderManage.getLeaveTime();
-            criteria.andLeaveTimeBetween(predate, latedate);
-            criteria2.andLeaveTimeBetween(predate, latedate);
+            criteria.andArrivalTimeBetween(predate, latedate);
+            criteria2.andArrivalTimeBetween(predate, latedate);
             criteria.andActiveEqualTo(1).andBookStatusEqualTo(2);
             criteria2.andActiveEqualTo(1).andBookStatusEqualTo(4);
             orderManageExample.or(criteria2);
