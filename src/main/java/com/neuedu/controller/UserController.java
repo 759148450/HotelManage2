@@ -51,7 +51,7 @@ public class UserController {
         return userService.update(user);
     }
 
-    @MyLog(value = "登录")  //这里添加了AOP的自定义注解
+//    @MyLog(value = "登录")  //这里添加了AOP的自定义注解
     @CrossOrigin(allowCredentials = "true")
     @PostMapping("/login")
     public User login(@Param("userName") String userName, @Param("userPwd") String userPwd, HttpServletResponse response) {
@@ -66,7 +66,7 @@ public class UserController {
         System.out.println("cookie" + cookie.getValue());
         return user;
     }
-    @MyLog(value = "退出")  //这里添加了AOP的自定义注解
+//    @MyLog(value = "退出")  //这里添加了AOP的自定义注解
     @GetMapping("/logout")
     public Integer logout(HttpServletRequest request,
                           HttpServletResponse response) {
